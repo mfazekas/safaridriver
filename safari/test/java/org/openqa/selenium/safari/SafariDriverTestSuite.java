@@ -15,7 +15,7 @@ public class SafariDriverTestSuite extends TestCase {
   public static Test suite() throws Exception {
     return new TestSuiteBuilder()
         .addSourceDir("safari")
-   //     .addSourceDir("common")
+        .addSourceDir("common")
         .usingDriver(SafariDriver.class)
         .includeJavascriptTests()
         .create();

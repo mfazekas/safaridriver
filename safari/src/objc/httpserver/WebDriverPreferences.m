@@ -56,6 +56,13 @@ static WebDriverPreferences *singleton = nil;
   }
 }
 
+- (UInt16)defaultServerPort
+{
+    NSDictionary *environments = [[NSProcessInfo processInfo] environment];
+    NSString* portString = [environments objectForKey:@"WEBDRIVER_SAFARI_PORT"];
+    return [portString intValue];
+}
+
 - (id)init {	
   // Fetching paramters from [NSUserDefaults standardUserDefaults].	
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

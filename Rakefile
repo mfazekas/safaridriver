@@ -37,6 +37,7 @@ task :selenium => [:'webdriver-selenium']
 task :support => [:'webdriver-support']
 task :iphone_client => [:'webdriver-iphone-client']
 task :iphone => [:iphone_server, :iphone_client]
+task :safari => [:'webdriver-safari']
 
 task :test_common => [:'webdriver-common-test']
 task :test_chrome => [:'webdriver-chrome-test']
@@ -50,6 +51,7 @@ task :test_selenium => [:'webdriver-selenium-server-test', :'webdriver-selenium-
 task :test_support => [:'webdriver-support-test']
 task :test_iphone_client => [:'webdriver-iphone-client-test']
 task :test_iphone => [:test_iphone_server, :test_iphone_client]
+task :test_safari => [:'webdriver-safari-test']
 
 task :test_core => [:'test_core_firefox']
 if (windows?)
@@ -673,7 +675,42 @@ task :test_iphone_server do
   else
     puts "XCode and/or iPhoneSDK not found. Not testing iphone_server."
   end
+end  
+
+java_test(:name => "webdriver-safari-test",
+          :srcs  => [ "safari/test/java/**/*.java" ],
+          :deps => [
+                     :'webdriver-safari',
+                     :'webdriver-common-test',
+                   ])
+
+task :safari_extension => FileList['safari/src/objc/**'] do |t|
+  if xcode? then
+    puts "Building safari extension"
+    sh "cd safari && xcodebuild -target SafariExtension", :verbose => true
+#    sh "cd safari && xcodebuild -target SafariExtension >/dev/null", :verbose => false
+    t.out = "safari/build/Release/SafariExtension.bundle"
+  else
+    puts "XCode not found. Not building the safari extension."
+  end
 end
+
+xpi(:name => "safari_extension_zip",
+    :srcs  => [],
+    :deps => [ :safari_extension ],
+    :resources => [
+                     :safari_extension 
+                  ],
+    :out => "safari-extension.zip")  
+    
+java_jar(:name => "webdriver-safari",
+         :srcs  => [ "safari/src/java/**/*.java" ],
+         :deps => [
+                    :common,
+                    :remote_common,
+                    :remote_client
+                  ],
+         :resources => [:safari_extension_zip])
 
 def version
   `svn info | grep Revision | awk -F: '{print $2}' | tr -d '[:space:]' | tr -d '\n'`

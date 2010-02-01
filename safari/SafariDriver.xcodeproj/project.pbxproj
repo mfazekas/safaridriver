@@ -38,6 +38,10 @@
 		CA5A68CB110825E500BF1BC8 /* WebDriverUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A68AC110825E500BF1BC8 /* WebDriverUtilities.m */; };
 		CA5A68D81108262400BF1BC8 /* libCocoaHTTPServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA5A68D71108261D00BF1BC8 /* libCocoaHTTPServer.a */; };
 		CA5A69231108360500BF1BC8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA5A69221108360500BF1BC8 /* WebKit.framework */; };
+		CA5DFD941112BD6600DCE78D /* libjson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA5DFD671112BD0F00DCE78D /* libjson.a */; };
+		D8F6C985110D6B19009DADFF /* BundleInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6C984110D6B19009DADFF /* BundleInjector.m */; };
+		D8F6CA48110D6C5D009DADFF /* BundleInjector.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8F6C97E110D6AE8009DADFF /* BundleInjector.dylib */; };
+		D8F6CBE5110E596E009DADFF /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F6CBE4110E596E009DADFF /* libcrypto.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +52,69 @@
 			remoteGlobalIDString = 8319631B0F28464E005D1D21;
 			remoteInfo = CocoaHTTPServer;
 		};
+		CA5DFD621112BD0F00DCE78D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53D229810C96121600276605 /* JSON.framework */;
+			remoteInfo = JSON;
+		};
+		CA5DFD641112BD0F00DCE78D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53D2298D0C96122A00276605 /* Tests.octest */;
+			remoteInfo = Tests;
+		};
+		CA5DFD661112BD0F00DCE78D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FE2BBD800D8B0D3900184787 /* libjson.a */;
+			remoteInfo = libjson;
+		};
+		CA5DFD681112BD0F00DCE78D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FE2BBDAB0D8B0EE000184787 /* libjsontests.octest */;
+			remoteInfo = libjsontests;
+		};
+		CA5DFD6A1112BD0F00DCE78D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53EF4D400DC247B3005F5E6D /* bench */;
+			remoteInfo = bench;
+		};
+		CA5DFDC11112BEEC00DCE78D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = FE2BBD7F0D8B0D3900184787 /* libjson */;
+			remoteInfo = libjson;
+		};
+		D8F6C62C110C970A009DADFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA5A68CF1108261D00BF1BC8 /* CocoaHTTPServerLibrary.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8319631A0F28464E005D1D21;
+			remoteInfo = CocoaHTTPServer;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D8F6CA54110D6C64009DADFF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 12;
+			files = (
+				D8F6CA48110D6C5D009DADFF /* BundleInjector.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CA5A6872110825E500BF1BC8 /* SafariExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafariExtension.h; sourceTree = "<group>"; };
@@ -111,6 +177,11 @@
 		CA5A68CF1108261D00BF1BC8 /* CocoaHTTPServerLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocoaHTTPServerLibrary.xcodeproj; path = "lib/buildtime-src/cocoahttpserver/CocoaHTTPServerLibrary.xcodeproj"; sourceTree = "<group>"; };
 		CA5A6906110833FB00BF1BC8 /* SafariExtension.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SafariExtension.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA5A69221108360500BF1BC8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
+		CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JSON.xcodeproj; path = "lib/buildtime-src/json-framework/project/JSON.xcodeproj"; sourceTree = "<group>"; };
+		D8F6C97E110D6AE8009DADFF /* BundleInjector.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = BundleInjector.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8F6C984110D6B19009DADFF /* BundleInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BundleInjector.m; sourceTree = "<group>"; };
+		D8F6CAAC110E42D3009DADFF /* SafariExtensionTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SafariExtensionTest-Info.plist"; sourceTree = "<group>"; };
+		D8F6CBE4110E596E009DADFF /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = /usr/lib/libcrypto.dylib; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +191,15 @@
 			files = (
 				CA5A68D81108262400BF1BC8 /* libCocoaHTTPServer.a in Frameworks */,
 				CA5A69231108360500BF1BC8 /* WebKit.framework in Frameworks */,
+				D8F6CBE5110E596E009DADFF /* libcrypto.dylib in Frameworks */,
+				CA5DFD941112BD6600DCE78D /* libjson.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8F6C97C110D6AE8009DADFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +282,7 @@
 		CA5A68AD110825E500BF1BC8 /* loader */ = {
 			isa = PBXGroup;
 			children = (
+				D8F6C984110D6B19009DADFF /* BundleInjector.m */,
 			);
 			name = loader;
 			path = src/objc/loader;
@@ -215,15 +296,30 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		CA5DFD571112BD0F00DCE78D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA5DFD631112BD0F00DCE78D /* JSON.framework */,
+				CA5DFD651112BD0F00DCE78D /* Tests.octest */,
+				CA5DFD671112BD0F00DCE78D /* libjson.a */,
+				CA5DFD691112BD0F00DCE78D /* libjsontests.octest */,
+				CA5DFD6B1112BD0F00DCE78D /* bench */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		CABBA68A1075E46400BABE9A = {
 			isa = PBXGroup;
 			children = (
+				CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */,
 				CA5A68CF1108261D00BF1BC8 /* CocoaHTTPServerLibrary.xcodeproj */,
 				CA5A6871110825E500BF1BC8 /* extension */,
 				CA5A6876110825E500BF1BC8 /* httpserver */,
 				CA5A68AD110825E500BF1BC8 /* loader */,
 				CABBA6D81075EA0500BABE9A /* Products */,
 				CA5A69221108360500BF1BC8 /* WebKit.framework */,
+				D8F6CAAC110E42D3009DADFF /* SafariExtensionTest-Info.plist */,
+				D8F6CBE4110E596E009DADFF /* libcrypto.dylib */,
 			);
 			sourceTree = "<group>";
 		};
@@ -231,11 +327,22 @@
 			isa = PBXGroup;
 			children = (
 				CA5A6906110833FB00BF1BC8 /* SafariExtension.bundle */,
+				D8F6C97E110D6AE8009DADFF /* BundleInjector.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D8F6C97A110D6AE8009DADFF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		CABBA6D61075EA0500BABE9A /* SafariExtension */ = {
@@ -245,15 +352,35 @@
 				CABBA6D31075EA0500BABE9A /* Resources */,
 				CABBA6D41075EA0500BABE9A /* Sources */,
 				CABBA6D51075EA0500BABE9A /* Frameworks */,
+				D8F6CA54110D6C64009DADFF /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D8F6C62D110C970A009DADFF /* PBXTargetDependency */,
+				CA5DFDC21112BEEC00DCE78D /* PBXTargetDependency */,
 			);
 			name = SafariExtension;
 			productName = SafariExtension;
 			productReference = CA5A6906110833FB00BF1BC8 /* SafariExtension.bundle */;
 			productType = "com.apple.product-type.bundle";
+		};
+		D8F6C97D110D6AE8009DADFF /* BundleInjector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8F6C983110D6AF9009DADFF /* Build configuration list for PBXNativeTarget "BundleInjector" */;
+			buildPhases = (
+				D8F6C97A110D6AE8009DADFF /* Headers */,
+				D8F6C97B110D6AE8009DADFF /* Sources */,
+				D8F6C97C110D6AE8009DADFF /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BundleInjector;
+			productName = BundleInjector;
+			productReference = D8F6C97E110D6AE8009DADFF /* BundleInjector.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
 
@@ -271,10 +398,15 @@
 					ProductGroup = CA5A68D01108261D00BF1BC8 /* Products */;
 					ProjectRef = CA5A68CF1108261D00BF1BC8 /* CocoaHTTPServerLibrary.xcodeproj */;
 				},
+				{
+					ProductGroup = CA5DFD571112BD0F00DCE78D /* Products */;
+					ProjectRef = CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
 				CABBA6D61075EA0500BABE9A /* SafariExtension */,
+				D8F6C97D110D6AE8009DADFF /* BundleInjector */,
 			);
 		};
 /* End PBXProject section */
@@ -285,6 +417,41 @@
 			fileType = archive.ar;
 			path = libCocoaHTTPServer.a;
 			remoteRef = CA5A68D61108261D00BF1BC8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CA5DFD631112BD0F00DCE78D /* JSON.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = JSON.framework;
+			remoteRef = CA5DFD621112BD0F00DCE78D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CA5DFD651112BD0F00DCE78D /* Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Tests.octest;
+			remoteRef = CA5DFD641112BD0F00DCE78D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CA5DFD671112BD0F00DCE78D /* libjson.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libjson.a;
+			remoteRef = CA5DFD661112BD0F00DCE78D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CA5DFD691112BD0F00DCE78D /* libjsontests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = libjsontests.octest;
+			remoteRef = CA5DFD681112BD0F00DCE78D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CA5DFD6B1112BD0F00DCE78D /* bench */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = bench;
+			remoteRef = CA5DFD6A1112BD0F00DCE78D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -336,7 +503,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D8F6C97B110D6AE8009DADFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8F6C985110D6B19009DADFF /* BundleInjector.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CA5DFDC21112BEEC00DCE78D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libjson;
+			targetProxy = CA5DFDC11112BEEC00DCE78D /* PBXContainerItemProxy */;
+		};
+		D8F6C62D110C970A009DADFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CocoaHTTPServer;
+			targetProxy = D8F6C62C110C970A009DADFF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CABBA68D1075E46400BABE9A /* Debug */ = {
@@ -351,7 +539,11 @@
 		CABBA68E1075E46400BABE9A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
+				COCOAHTTPSERVER_HEADERS = "$(PROJECT_DIR)/lib/buildtime-src/cocoahttpserver/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/usr/local/include";
 				COPY_PHASE_STRIP = YES;
+				JSON_HEADERS = "$(PROJECT_DIR)/lib/buildtime-src/json-framework/project/Source/";
 			};
 			name = Release;
 		};
@@ -380,11 +572,18 @@
 				);
 				INFOPLIST_FILE = "SafariExtension-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/build/Release\"";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
 					"-framework",
 					AppKit,
+					"-ObjC",
+					"-all_load",
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = SafariExtension;
@@ -405,12 +604,51 @@
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/lib/cocoahttpserver/build/Debug\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/lib/cocoahttpserver/build/Debug\"";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				HEADER_SEARCH_PATHS = (
+					"${JSON_HEADERS}",
+					"${COCOAHTTPSERVER_HEADERS}",
+				);
 				INFOPLIST_FILE = "SafariExtension-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/build/Release\"";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-ObjC",
+					"-all_load",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = SafariExtension;
+				WRAPPER_EXTENSION = bundle;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		D8F6C97F110D6AE9009DADFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INSTALL_PATH = /usr/local/lib;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -418,8 +656,31 @@
 					AppKit,
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = SafariExtension;
-				WRAPPER_EXTENSION = bundle;
+				PRODUCT_NAME = BundleInjector;
+			};
+			name = Debug;
+		};
+		D8F6C980110D6AE9009DADFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INSTALL_PATH = /usr/local/lib;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = BundleInjector;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -441,6 +702,15 @@
 			buildConfigurations = (
 				CABBA6DB1075EA0600BABE9A /* Debug */,
 				CABBA6DC1075EA0600BABE9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8F6C983110D6AF9009DADFF /* Build configuration list for PBXNativeTarget "BundleInjector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8F6C97F110D6AE9009DADFF /* Debug */,
+				D8F6C980110D6AE9009DADFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

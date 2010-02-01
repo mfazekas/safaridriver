@@ -30,6 +30,8 @@
 		831963FC0F295273005D1D21 /* HTTPVirtualDirectory.m in Sources */ = {isa = PBXBuildFile; fileRef = 831963F30F295273005D1D21 /* HTTPVirtualDirectory.m */; };
 		831964290F295636005D1D21 /* HTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 831964270F295636005D1D21 /* HTTPConnection.m */; };
 		8319642A0F295636005D1D21 /* HTTPResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 831964280F295636005D1D21 /* HTTPResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8F6CBDD110E591F009DADFF /* SSCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = D8F6CBDB110E591F009DADFF /* SSCrypto.h */; };
+		D8F6CBDE110E591F009DADFF /* SSCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6CBDC110E591F009DADFF /* SSCrypto.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		831963F50F295273005D1D21 /* redirect_and_error.patch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = redirect_and_error.patch; path = extensions/redirect_and_error.patch; sourceTree = SOURCE_ROOT; };
 		831964270F295636005D1D21 /* HTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPConnection.m; sourceTree = "<group>"; };
 		831964280F295636005D1D21 /* HTTPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPResponse.h; sourceTree = "<group>"; };
+		D8F6CBDB110E591F009DADFF /* SSCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSCrypto.h; path = project/SSCrypto.h; sourceTree = "<group>"; };
+		D8F6CBDC110E591F009DADFF /* SSCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSCrypto.m; path = project/SSCrypto.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,8 @@
 		831963A10F292DE1005D1D21 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				D8F6CBDB110E591F009DADFF /* SSCrypto.h */,
+				D8F6CBDC110E591F009DADFF /* SSCrypto.m */,
 				831963A20F292DE1005D1D21 /* DDNumber.h */,
 				831963A30F292DE1005D1D21 /* DDNumber.m */,
 				831963A40F292DE1005D1D21 /* DDRange.h */,
@@ -205,6 +211,7 @@
 				831963F90F295273005D1D21 /* HTTPStaticResource.h in Headers */,
 				831963FB0F295273005D1D21 /* HTTPVirtualDirectory.h in Headers */,
 				8319642A0F295636005D1D21 /* HTTPResponse.h in Headers */,
+				D8F6CBDD110E591F009DADFF /* SSCrypto.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +290,7 @@
 				831963FA0F295273005D1D21 /* HTTPStaticResource.m in Sources */,
 				831963FC0F295273005D1D21 /* HTTPVirtualDirectory.m in Sources */,
 				831964290F295636005D1D21 /* HTTPConnection.m in Sources */,
+				D8F6CBDE110E591F009DADFF /* SSCrypto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,24 +331,26 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PREPROCESSOR_DEFINITIONS = "MD5_DIGEST_LENGTH=16";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.2;
+				SDKROOT = "";
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PREPROCESSOR_DEFINITIONS = "MD5_DIGEST_LENGTH=16";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.2;
+				SDKROOT = "";
 			};
 			name = Release;
 		};

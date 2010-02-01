@@ -4,6 +4,9 @@ import org.openqa.selenium.WebDriverException;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.net.URL;
+import java.util.Map;
 import java.util.List;
 
 /**
@@ -15,10 +18,11 @@ public class SafariBinary {
   private static final String SAFARI_BINARY_LOCATION = 
       "/Applications/Safari.app/Contents/MacOS/Safari";
   
-  private static final int LOAD_WAIT = 5000;
+  private static final int LOAD_WAIT = 3000;
   
   private ProcessWrapper safariProcess;
   private ProcessBuilder processBuilder;
+  private SafariExtension safariExtension;
   
   interface ProcessListener {
     void onProcessFinished();
@@ -70,11 +74,22 @@ public class SafariBinary {
   public SafariBinary() {
     processBuilder = 
       new ProcessBuilder(SAFARI_BINARY_LOCATION).redirectErrorStream(true);
+    
+    safariExtension = new SafariExtension();
+  }
+  
+  private void setupBuilderEnvironments() throws IOException {
+    Map<String, String> extraEnvs = new HashMap<String, String>(); 
+    safariExtension.addLoadExtensionEnvs(extraEnvs,SAFARI_BINARY_LOCATION);
+    safariExtension.addListenPortEnv(extraEnvs,new URL(getUrl()));
+    processBuilder.environment().putAll(extraEnvs);	
   }
   
   public void startSafari() {
     if (safariProcess == null) {
       try {
+        setupBuilderEnvironments();
+        
         safariProcess = new ProcessWrapper(processBuilder.start());
         safariProcess.addProcessListener(new ProcessListener() {          
           @Override
