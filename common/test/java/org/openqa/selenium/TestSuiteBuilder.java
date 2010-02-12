@@ -103,10 +103,32 @@ public class TestSuiteBuilder {
     return this;
   }
 
+  protected void applySystemProperties() {
+    if (Boolean.getBoolean("webdriver.keepDriverInstance")) {
+      keepDriverInstance();
+    }
+
+    String testclass = System.getProperty("webdriver.tests.class");
+    if (testclass != null) {
+      onlyRun(testclass);
+
+      // hack - should be removed once js tests are properly filtered:
+      this.includeJsApiTests = false;
+      this.includeJavascript = false;
+    }
+
+    String testmethod = System.getProperty("webdriver.tests.method");
+    if (testmethod != null) {
+      method(testmethod);
+    }
+  }
+
   public Test create() throws Exception {
     if (withDriver) {
       assertThat("No driver class set", driverClass, is(notNullValue()));
     }
+
+    applySystemProperties();
 
     TestSuite suite = new TestSuite();
     for (File dir : sourceDirs) {

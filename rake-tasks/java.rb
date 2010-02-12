@@ -162,6 +162,10 @@ class JavaGen < BaseGenerator
       test_string += "-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=#{ENV['REMOTE_JAVA_DEBUG_PORT']} "
     end
 
+    if ENV['JVM_ARGS'] then
+      test_string += ENV['JVM_ARGS']+" "
+    end  
+
     test_string += main
     test_string += ' ' + args[:args] if args[:args]
 
