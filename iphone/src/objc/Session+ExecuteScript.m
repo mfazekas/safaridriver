@@ -19,7 +19,7 @@
 #import "Session+ExecuteScript.h"
 #import "HTTPVirtualDirectory+AccessViewController.h"
 #import "NSObject+SBJSON.h"
-#import "WebViewController.h"
+#import "WebViewDriver.h"
 #import "NSException+WebDriver.h"
 #import "Element.h"
 #import "ElementStore.h"

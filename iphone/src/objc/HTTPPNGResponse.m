@@ -20,7 +20,7 @@
 
 @implementation HTTPPNGResponse
 
-- (id)initWithImage:(UIImage *)image {
+- (id)initWithImage:(ImageType *)image {
   NSData *imageData = UIImagePNGRepresentation(image);
   NSLog(@"Sending PNG image of size %d bytes", [imageData length]);
   return [super initWithData:imageData];

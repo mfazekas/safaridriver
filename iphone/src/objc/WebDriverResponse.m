@@ -96,7 +96,7 @@
 - (void)createResponse {
   [response_ release];
   
-  if ([value_ isKindOfClass:[UIImage class]]) {
+  if ([value_ isKindOfClass:[ImageType class]]) {
     response_ = [[HTTPPNGResponse alloc] initWithImage:value_];
   } else {
     NSDictionary *dict = [self convertToDictionary];

@@ -22,7 +22,7 @@
 #import "WebDriverResponse.h"
 #import "HTTPVirtualDirectory+AccessViewController.h"
 #import "HTTPStaticResource.h"
-#import "WebViewController.h"
+#import "WebViewDriver.h"
 
 @implementation Attribute
 

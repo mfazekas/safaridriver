@@ -25,8 +25,7 @@
 #import "HTTPVirtualDirectory+AccessViewController.h"
 #import "Element+FindElement.h"
 #import "Attribute.h"
-#import "MainViewController.h"
-#import "WebViewController.h"
+#import "WebViewDriver.h"
 #import "NSString+SBJSON.h"
 #import "NSException+WebDriver.h"
 #import "errorcodes.h"
@@ -227,7 +226,7 @@ static NSString* const ELEMENT_ID_KEY = @"ELEMENT";
   CGRect currentPosition = [self bounds];
   CGPoint midpoint = CGPointMake(CGRectGetMidX(currentPosition),
                                  CGRectGetMidY(currentPosition));
-  [[[MainViewController sharedInstance] webViewController]
+  [[self viewController]
    clickOnPageElementAt:midpoint];
 }
 

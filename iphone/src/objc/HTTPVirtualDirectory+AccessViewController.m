@@ -17,23 +17,17 @@
 //  limitations under the License.
 
 #import "HTTPVirtualDirectory+AccessViewController.h"
-#import "HTTPServerController.h"
-#import "WebDriverPreferences.h"
-#import "WebDriverRequestFetcher.h"
+
+#import "WebViewDriverSingleton.h"
 
 @implementation HTTPVirtualDirectory (AccessViewController)
 
-- (WebViewController *)viewController {
+- (id<WebViewDriver>)viewController {
   // This is a somewhat ugly implementation. It is implemented like this so
   // if we have multiple view controllers (eg, tabs), all VirtualDirectory
   // access of the viewController can be easily changed.
-	
-  NSString* mode = [[WebDriverPreferences sharedInstance] mode];
-  if ([mode isEqualToString:@"Server"]) {
-    return [[HTTPServerController sharedInstance] viewController];
-  } else {
-    return [[WebDriverRequestFetcher sharedInstance] viewController];
-  }
+  
+  return [WebViewDriverSingleton instance];
 }
 
 @end

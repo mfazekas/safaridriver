@@ -27,7 +27,7 @@
   return [[self document] findElementsUsing:data];
 }
 
-- (NSArray *)findElement:(NSDictionary *)data {
+- (NSDictionary *)findElement:(NSDictionary *)data {
   // Just forward the request to the document element.
   return [[self document] findElementUsing:data];
 }

@@ -34,6 +34,7 @@ public class IPhoneDriverTestSuite extends TestCase {
         .addSourceDir("iphone")
         .addSourceDir("remote")
         .addSourceDir("common")
+ //       .usingDriver(IPhoneDriver.class)
         .usingDriver(TestIPhoneSimulatorDriver.class)
         .exclude(IPHONE)
         .exclude(REMOTE)

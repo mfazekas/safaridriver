@@ -1,5 +1,5 @@
 //
-//  VirtualDirectory+AccessViewController.h
+//  WebViewController.h
 //  iWebDriver
 //
 //  Copyright 2009 Google Inc.
@@ -16,15 +16,28 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-#import <Foundation/Foundation.h>
-#import "HTTPVirtualDirectory.h"
+#import <UIKit/UIKit.h>
 
-@protocol WebViewDriver;
+#import "WebViewDriver.h"
+#import "WebViewControllerCommon.h"
 
-// This category gives |HTTPVirtualDirectory| objects access to the
-// |WebViewController|.
-@interface HTTPVirtualDirectory (AccessViewController)
+// The WebViewController manages the iWebDriver's WebView.
+@interface WebViewController : UIViewController<UIWebViewDelegate,WebViewControllerDelegate>
+{
+ @private
+  NSURLRequestCachePolicy cachePolicy_;
+  
+  // Pointer to the status / activity label.
+  IBOutlet UILabel *statusLabel_;
+  
+  // This is nil if the last operation succeeded.
+  NSError *lastError_;
+  
+  WebViewControllerCommon* webViewControllerCommon_;
+}
 
-- (id<WebViewDriver>)viewController;
+@property (retain, readonly) UIWebView *webView;
+
+- (id<WebViewDriver>)webViewDriver;
 
 @end

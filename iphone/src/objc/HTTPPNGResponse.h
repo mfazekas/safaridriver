@@ -19,6 +19,14 @@
 #import <Foundation/Foundation.h>
 #import "HTTPResponse.h"
 
+#if TARGET_OS_IPHONE
+@class UIImage;
+typedef UIImage ImageType;
+#else
+@class NSImage;
+typedef NSImage ImageType;
+#endif
+
 // |HTTPPNGResponse| wraps |HTTPDataResponse| for image data. It is used to
 // return a PNG from an HTTP method.
 // 
@@ -28,6 +36,6 @@
 
 }
 
-- (id)initWithImage:(UIImage *)image;
+- (id)initWithImage:(ImageType *)image;
 
 @end

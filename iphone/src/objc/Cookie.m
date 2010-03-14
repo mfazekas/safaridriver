@@ -23,7 +23,7 @@
 #import "NSString+SBJSON.h"
 #import "WebDriverResource.h"
 #import "WebDriverResponse.h"
-#import "WebViewController.h"
+#import "WebViewDriver.h"
 #import "errorcodes.h"
 
 @implementation Cookie

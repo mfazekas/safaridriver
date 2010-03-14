@@ -30,7 +30,7 @@
 // {"value":"test_id_out", "using": "id"}
 // The search method can be 'class', 'name', 'id', 'link text', and 'class name'.
 // Throws an exception if no element can be found.
-- (NSArray *)findElement:(NSDictionary *)data;
+- (NSDictionary *)findElement:(NSDictionary *)data;
 
 // Find and return all matching elements for the search query.
 // The search query should be defined the same as for |findElement:| above.

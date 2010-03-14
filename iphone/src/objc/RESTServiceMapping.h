@@ -17,7 +17,11 @@
 //  limitations under the License.
 
 #import <Foundation/Foundation.h>
+#if TARGET_OS_IPHONE
 #import <CFNetwork/CFNetwork.h>
+#else
+#import <CoreServices/CoreServices.h>
+#endif
 #import "HTTPResponse.h"
 
 @class VirtualDirectory;

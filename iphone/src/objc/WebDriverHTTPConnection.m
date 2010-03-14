@@ -17,7 +17,7 @@
 //  limitations under the License.
 
 #import "WebDriverHTTPConnection.h"
-#import "WebViewController.h"
+#import "WebViewDriver.h"
 #import "HTTPServerController.h"
 
 @implementation WebDriverHTTPConnection

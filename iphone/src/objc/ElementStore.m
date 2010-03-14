@@ -19,7 +19,7 @@
 #import "ElementStore.h"
 #import "JSONRESTResource.h"
 #import "HTTPRedirectResponse.h"
-#import "WebViewController.h"
+#import "WebViewDriver.h"
 #import "HTTPVirtualDirectory+AccessViewController.h"
 #import "WebDriverResource.h"
 #import "ElementStore+FindElement.h"

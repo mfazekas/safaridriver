@@ -21,7 +21,7 @@
 #import "ElementStore.h"
 #import "WebDriverResource.h"
 #import "NSException+WebDriver.h"
-#import "WebViewController.h"
+#import "WebViewDriver.h"
 #import "errorcodes.h"
 
 @implementation Element (FindElement)

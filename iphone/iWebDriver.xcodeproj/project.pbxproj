@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		17D715560FE107B500CC479E /* HTTPPNGResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D715550FE107B500CC479E /* HTTPPNGResponse.m */; };
-		17D7163E0FE12CC100CC479E /* HTTPPNGResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D715550FE107B500CC479E /* HTTPPNGResponse.m */; };
 		1D3623260D0F684500981E51 /* iWebDriverAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iWebDriverAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -21,7 +20,6 @@
 		289233AF0DB2D0DB0083E9F9 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AB0DB2D0DB0083E9F9 /* RootViewController.m */; };
 		289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
 		642C489F112260150064EB9C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 642C489E112260150064EB9C /* QuartzCore.framework */; };
-		642C48A4112260480064EB9C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 642C48A3112260480064EB9C /* QuartzCore.framework */; };
 		644F14ED10AB4EF400858ECA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 644F14EC10AB4EF400858ECA /* Settings.bundle */; };
 		649EDC0210C5981B00E66D06 /* WebDriverUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = FD61E6980FE150E5006E1274 /* WebDriverUtilities.m */; };
 		649EDC0310C5983700E66D06 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
@@ -31,38 +29,25 @@
 		649EDC8510C5988000E66D06 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		649EDC8610C5989200E66D06 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FD61E69D0FE151A4006E1274 /* libsqlite3.dylib */; };
 		64CF265310D190820029D641 /* Cookie.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CF265210D190820029D641 /* Cookie.m */; };
-		64CF265410D190820029D641 /* Cookie.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CF265210D190820029D641 /* Cookie.m */; };
 		64D8AA431120B94D001649CC /* SessionRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D8AA421120B94D001649CC /* SessionRoot.m */; };
-		64D8AA441120B94D001649CC /* SessionRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D8AA421120B94D001649CC /* SessionRoot.m */; };
 		64D8AA4F1120B995001649CC /* NSURLRequest+IgnoreSSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D8AA4E1120B995001649CC /* NSURLRequest+IgnoreSSL.m */; };
-		64D8AA501120B995001649CC /* NSURLRequest+IgnoreSSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D8AA4E1120B995001649CC /* NSURLRequest+IgnoreSSL.m */; };
 		64D8AA691120B9EC001649CC /* HTTPVirtualDirectory+Remove.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D8AA611120B9EC001649CC /* HTTPVirtualDirectory+Remove.m */; };
 		64D8AA711120B9EC001649CC /* HTTPVirtualDirectory+Remove.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D8AA611120B9EC001649CC /* HTTPVirtualDirectory+Remove.m */; };
 		8301250C0EFF044900BA9BE6 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 839988650EE515C90074D106 /* Session.m */; };
 		8311AB7A0F44EF0500921B78 /* selenium-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8311AB790F44EF0500921B78 /* selenium-icon.png */; };
 		8316A2120EECE0F700FE869C /* HTTPResponse+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8316A2110EECE0F700FE869C /* HTTPResponse+Utility.m */; };
-		8316A2130EECE0F700FE869C /* HTTPResponse+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8316A2110EECE0F700FE869C /* HTTPResponse+Utility.m */; };
 		831962720F27E79F005D1D21 /* UIResponder+SimulateTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 831962710F27E79F005D1D21 /* UIResponder+SimulateTouch.m */; };
 		831964A60F29692E005D1D21 /* libCocoaHTTPServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8319647B0F29686E005D1D21 /* libCocoaHTTPServer.a */; };
 		833104800F1EB2F7000A38DB /* NSException+WebDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 8331047F0F1EB2F7000A38DB /* NSException+WebDriver.m */; };
 		835DF5D70F00C65600F3DD80 /* WebDriverResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 835DF5D60F00C65600F3DD80 /* WebDriverResource.m */; };
 		83615D920EEE47940028DAE5 /* ElementStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 83615D910EEE47940028DAE5 /* ElementStore.m */; };
-		83615D930EEE47940028DAE5 /* ElementStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 83615D910EEE47940028DAE5 /* ElementStore.m */; };
 		83615E000EF619230028DAE5 /* WebDriverHTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83615DFF0EF619230028DAE5 /* WebDriverHTTPServer.m */; };
-		83615E010EF619230028DAE5 /* WebDriverHTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83615DFF0EF619230028DAE5 /* WebDriverHTTPServer.m */; };
 		8361602C0EF72F190028DAE5 /* HTTPVirtualDirectory+AccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8361602B0EF72F190028DAE5 /* HTTPVirtualDirectory+AccessViewController.m */; };
-		8361602D0EF72F190028DAE5 /* HTTPVirtualDirectory+AccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8361602B0EF72F190028DAE5 /* HTTPVirtualDirectory+AccessViewController.m */; };
 		836160370EF7343B0028DAE5 /* WebDriverResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 836160360EF7343B0028DAE5 /* WebDriverResponse.m */; };
-		836160380EF7343B0028DAE5 /* WebDriverResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 836160360EF7343B0028DAE5 /* WebDriverResponse.m */; };
-		836666E10F089177002B05EE /* WebDriverResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 835DF5D60F00C65600F3DD80 /* WebDriverResource.m */; };
 		838B334C0F14254C00F72BC4 /* Session+ExecuteScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 838B334B0F14254C00F72BC4 /* Session+ExecuteScript.m */; };
-		838B334D0F14254C00F72BC4 /* Session+ExecuteScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 838B334B0F14254C00F72BC4 /* Session+ExecuteScript.m */; };
 		838B33750F14286600F72BC4 /* ElementStore+FindElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 838B33740F14286600F72BC4 /* ElementStore+FindElement.m */; };
-		838B33760F14286600F72BC4 /* ElementStore+FindElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 838B33740F14286600F72BC4 /* ElementStore+FindElement.m */; };
 		838B33790F142CE800F72BC4 /* Element.m in Sources */ = {isa = PBXBuildFile; fileRef = 838B33780F142CE800F72BC4 /* Element.m */; };
-		838B337A0F142CE800F72BC4 /* Element.m in Sources */ = {isa = PBXBuildFile; fileRef = 838B33780F142CE800F72BC4 /* Element.m */; };
 		838B349E0F14630E00F72BC4 /* Element+FindElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 838B349D0F14630E00F72BC4 /* Element+FindElement.m */; };
-		838B349F0F14630E00F72BC4 /* Element+FindElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 838B349D0F14630E00F72BC4 /* Element+FindElement.m */; };
 		839049350F1ACEFD001A79B6 /* Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 839049340F1ACEFD001A79B6 /* Attribute.m */; };
 		8399863C0EE3A2E70074D106 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8399863B0EE3A2E70074D106 /* MainView.xib */; };
 		8399865D0EE3A5000074D106 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399865C0EE3A5000074D106 /* WebViewController.m */; };
@@ -92,6 +77,21 @@
 		83B927D30EE354060011DCC4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B927D20EE354060011DCC4 /* CFNetwork.framework */; };
 		83E5B3830EFF6DB7004AA772 /* HTTPJSONResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E5B30F0EFF6749004AA772 /* HTTPJSONResponse.m */; };
 		83E5B3840EFF6DB7004AA772 /* JSONRESTResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E5B3110EFF6749004AA772 /* JSONRESTResource.m */; };
+		D8851F741142A4B1005013C8 /* WebViewDriverSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = D8851F731142A4B1005013C8 /* WebViewDriverSingleton.m */; };
+		D8B93798114B9852006F8CE8 /* Session+ExecuteScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 838B334B0F14254C00F72BC4 /* Session+ExecuteScript.m */; };
+		D8D640A01143123600C72A5D /* WebDriverResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 835DF5D60F00C65600F3DD80 /* WebDriverResource.m */; };
+		D8D640AC1143125F00C72A5D /* Element.m in Sources */ = {isa = PBXBuildFile; fileRef = 838B33780F142CE800F72BC4 /* Element.m */; };
+		D8D640AD1143126500C72A5D /* ElementStore+FindElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 838B33740F14286600F72BC4 /* ElementStore+FindElement.m */; };
+		D8D640AE1143126600C72A5D /* Element+FindElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 838B349D0F14630E00F72BC4 /* Element+FindElement.m */; };
+		D8D640B91143129000C72A5D /* ElementStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 83615D910EEE47940028DAE5 /* ElementStore.m */; };
+		D8D640BC1143129500C72A5D /* SessionRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D8AA421120B94D001649CC /* SessionRoot.m */; };
+		D8D640C4114312AE00C72A5D /* WebDriverResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 836160360EF7343B0028DAE5 /* WebDriverResponse.m */; };
+		D8D640CD114312CA00C72A5D /* WebViewDriverSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = D8851F731142A4B1005013C8 /* WebViewDriverSingleton.m */; };
+		D8D640D3114312D800C72A5D /* Cookie.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CF265210D190820029D641 /* Cookie.m */; };
+		D8D640D6114312E100C72A5D /* HTTPPNGResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D715550FE107B500CC479E /* HTTPPNGResponse.m */; };
+		D8D640DA114312EC00C72A5D /* WebDriverHTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83615DFF0EF619230028DAE5 /* WebDriverHTTPServer.m */; };
+		D8D640E6114313A900C72A5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 642C489E112260150064EB9C /* QuartzCore.framework */; };
+		D8F6CCAF110F8A27009DADFF /* WebViewControllerCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6CCAE110F8A27009DADFF /* WebViewControllerCommon.m */; };
 		FD61E6990FE150E5006E1274 /* WebDriverUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = FD61E6980FE150E5006E1274 /* WebDriverUtilities.m */; };
 		FD61E69E0FE151A4006E1274 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FD61E69D0FE151A4006E1274 /* libsqlite3.dylib */; };
 		FD61E6A90FE151D2006E1274 /* WebDriverPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = FD61E6A60FE151D2006E1274 /* WebDriverPreferences.m */; };
@@ -191,8 +191,8 @@
 		839049330F1ACEFD001A79B6 /* Attribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attribute.h; sourceTree = "<group>"; };
 		839049340F1ACEFD001A79B6 /* Attribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attribute.m; sourceTree = "<group>"; };
 		8399863B0EE3A2E70074D106 /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
-		8399865B0EE3A5000074D106 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
-		8399865C0EE3A5000074D106 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		8399865B0EE3A5000074D106 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = Classes/WebViewController.h; sourceTree = "<group>"; };
+		8399865C0EE3A5000074D106 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = Classes/WebViewController.m; sourceTree = "<group>"; };
 		839986A10EE3AA5E0074D106 /* HTTPServerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPServerController.h; sourceTree = "<group>"; };
 		839986A20EE3AA5E0074D106 /* HTTPServerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPServerController.m; sourceTree = "<group>"; };
 		839986BC0EE3AB990074D106 /* WebDriverHTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebDriverHTTPConnection.h; sourceTree = "<group>"; };
@@ -214,6 +214,13 @@
 		83E5B30F0EFF6749004AA772 /* HTTPJSONResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPJSONResponse.m; sourceTree = "<group>"; };
 		83E5B3100EFF6749004AA772 /* JSONRESTResource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONRESTResource.h; sourceTree = "<group>"; };
 		83E5B3110EFF6749004AA772 /* JSONRESTResource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONRESTResource.m; sourceTree = "<group>"; };
+		D8432AD4114273FD00F2A242 /* NSURLRequest+IgnoreSSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+IgnoreSSL.h"; sourceTree = "<group>"; };
+		D8432AD5114273FD00F2A242 /* NSURLRequest+IgnoreSSL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+IgnoreSSL.m"; sourceTree = "<group>"; };
+		D85664F61145713C00F1D416 /* WebViewDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewDriver.h; sourceTree = "<group>"; };
+		D8851F721142A4B1005013C8 /* WebViewDriverSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewDriverSingleton.h; path = Classes/WebViewDriverSingleton.h; sourceTree = "<group>"; };
+		D8851F731142A4B1005013C8 /* WebViewDriverSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewDriverSingleton.m; path = Classes/WebViewDriverSingleton.m; sourceTree = "<group>"; };
+		D8F6CCAD110F8A27009DADFF /* WebViewControllerCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewControllerCommon.h; sourceTree = "<group>"; };
+		D8F6CCAE110F8A27009DADFF /* WebViewControllerCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewControllerCommon.m; sourceTree = "<group>"; };
 		FD61E6970FE150E5006E1274 /* WebDriverUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebDriverUtilities.h; sourceTree = "<group>"; };
 		FD61E6980FE150E5006E1274 /* WebDriverUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebDriverUtilities.m; sourceTree = "<group>"; };
 		FD61E69D0FE151A4006E1274 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = "<absolute>"; };
@@ -261,7 +268,7 @@
 				83998A1C0EE763490074D106 /* CFNetwork.framework in Frameworks */,
 				839D642B0F2EB400009645BF /* libCocoaHTTPServer.a in Frameworks */,
 				649EDC8610C5989200E66D06 /* libsqlite3.dylib in Frameworks */,
-				642C48A4112260480064EB9C /* QuartzCore.framework in Frameworks */,
+				D8D640E6114313A900C72A5D /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +320,10 @@
 		289233A00DB2D0730083E9F9 /* Main View */ = {
 			isa = PBXGroup;
 			children = (
+				D8851F721142A4B1005013C8 /* WebViewDriverSingleton.h */,
+				D8851F731142A4B1005013C8 /* WebViewDriverSingleton.m */,
+				D8F6CCAD110F8A27009DADFF /* WebViewControllerCommon.h */,
+				D8F6CCAE110F8A27009DADFF /* WebViewControllerCommon.m */,
 				289233A80DB2D0DB0083E9F9 /* MainViewController.h */,
 				289233A90DB2D0DB0083E9F9 /* MainViewController.m */,
 				8399865B0EE3A5000074D106 /* WebViewController.h */,
@@ -402,6 +413,7 @@
 		838B332C0F1422F600F72BC4 /* REST Service */ = {
 			isa = PBXGroup;
 			children = (
+				D85664F61145713C00F1D416 /* WebViewDriver.h */,
 				64D8AA411120B94D001649CC /* SessionRoot.h */,
 				64D8AA421120B94D001649CC /* SessionRoot.m */,
 				839988640EE515C90074D106 /* Session.h */,
@@ -428,6 +440,10 @@
 			isa = PBXGroup;
 			children = (
 				64D8AA9F1120BAF9001649CC /* errorcodes.h */,
+				D8432AD4114273FD00F2A242 /* NSURLRequest+IgnoreSSL.h */,
+				D8432AD5114273FD00F2A242 /* NSURLRequest+IgnoreSSL.m */,
+				838B332C0F1422F600F72BC4 /* REST Service */,
+				17D715530FE1078C00CC479E /* HTTP + PNG */,
 				FD61E6970FE150E5006E1274 /* WebDriverUtilities.h */,
 				FD61E6980FE150E5006E1274 /* WebDriverUtilities.m */,
 				FD61E6A50FE151D2006E1274 /* WebDriverPreferences.h */,
@@ -661,18 +677,12 @@
 				839986BE0EE3AB990074D106 /* WebDriverHTTPConnection.m in Sources */,
 				839988660EE515C90074D106 /* Session.m in Sources */,
 				839988690EE535750074D106 /* RESTServiceMapping.m in Sources */,
-				8316A2130EECE0F700FE869C /* HTTPResponse+Utility.m in Sources */,
 				83615D920EEE47940028DAE5 /* ElementStore.m in Sources */,
 				83615E000EF619230028DAE5 /* WebDriverHTTPServer.m in Sources */,
 				8361602C0EF72F190028DAE5 /* HTTPVirtualDirectory+AccessViewController.m in Sources */,
 				836160370EF7343B0028DAE5 /* WebDriverResponse.m in Sources */,
 				83E5B3830EFF6DB7004AA772 /* HTTPJSONResponse.m in Sources */,
 				83E5B3840EFF6DB7004AA772 /* JSONRESTResource.m in Sources */,
-				836666E10F089177002B05EE /* WebDriverResource.m in Sources */,
-				838B334D0F14254C00F72BC4 /* Session+ExecuteScript.m in Sources */,
-				838B33760F14286600F72BC4 /* ElementStore+FindElement.m in Sources */,
-				838B337A0F142CE800F72BC4 /* Element.m in Sources */,
-				838B349F0F14630E00F72BC4 /* Element+FindElement.m in Sources */,
 				839049350F1ACEFD001A79B6 /* Attribute.m in Sources */,
 				833104800F1EB2F7000A38DB /* NSException+WebDriver.m in Sources */,
 				831962720F27E79F005D1D21 /* UIResponder+SimulateTouch.m in Sources */,
@@ -690,6 +700,13 @@
 				64D8AA431120B94D001649CC /* SessionRoot.m in Sources */,
 				64D8AA4F1120B995001649CC /* NSURLRequest+IgnoreSSL.m in Sources */,
 				64D8AA691120B9EC001649CC /* HTTPVirtualDirectory+Remove.m in Sources */,
+				D8F6CCAF110F8A27009DADFF /* WebViewControllerCommon.m in Sources */,
+				D8851F741142A4B1005013C8 /* WebViewDriverSingleton.m in Sources */,
+				D8D640A01143123600C72A5D /* WebDriverResource.m in Sources */,
+				D8D640AC1143125F00C72A5D /* Element.m in Sources */,
+				D8D640AD1143126500C72A5D /* ElementStore+FindElement.m in Sources */,
+				D8D640AE1143126600C72A5D /* Element+FindElement.m in Sources */,
+				D8B93798114B9852006F8CE8 /* Session+ExecuteScript.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,10 +727,6 @@
 				83998A890EE77F380074D106 /* HTTPServerController.m in Sources */,
 				83998A8B0EE77F440074D106 /* RESTServiceMapping.m in Sources */,
 				8316A2120EECE0F700FE869C /* HTTPResponse+Utility.m in Sources */,
-				83615D930EEE47940028DAE5 /* ElementStore.m in Sources */,
-				83615E010EF619230028DAE5 /* WebDriverHTTPServer.m in Sources */,
-				8361602D0EF72F190028DAE5 /* HTTPVirtualDirectory+AccessViewController.m in Sources */,
-				836160380EF7343B0028DAE5 /* WebDriverResponse.m in Sources */,
 				8301250C0EFF044900BA9BE6 /* Session.m in Sources */,
 				835DF5D70F00C65600F3DD80 /* WebDriverResource.m in Sources */,
 				838B334C0F14254C00F72BC4 /* Session+ExecuteScript.m in Sources */,
@@ -721,17 +734,20 @@
 				838B33790F142CE800F72BC4 /* Element.m in Sources */,
 				838B349E0F14630E00F72BC4 /* Element+FindElement.m in Sources */,
 				839D645A0F2EB4BB009645BF /* HTTPJSONResponse.m in Sources */,
-				17D7163E0FE12CC100CC479E /* HTTPPNGResponse.m in Sources */,
 				839D645B0F2EB4BC009645BF /* JSONRESTResource.m in Sources */,
 				839D645C0F2EB4C0009645BF /* Attribute.m in Sources */,
 				839D645D0F2EB4C3009645BF /* NSException+WebDriver.m in Sources */,
 				839D645E0F2EB4CB009645BF /* WebViewController.m in Sources */,
 				839D645F0F2EB4CC009645BF /* MainViewController.m in Sources */,
 				839D64600F2EB4D0009645BF /* UIResponder+SimulateTouch.m in Sources */,
-				64CF265410D190820029D641 /* Cookie.m in Sources */,
-				64D8AA441120B94D001649CC /* SessionRoot.m in Sources */,
-				64D8AA501120B995001649CC /* NSURLRequest+IgnoreSSL.m in Sources */,
 				64D8AA711120B9EC001649CC /* HTTPVirtualDirectory+Remove.m in Sources */,
+				D8D640B91143129000C72A5D /* ElementStore.m in Sources */,
+				D8D640BC1143129500C72A5D /* SessionRoot.m in Sources */,
+				D8D640C4114312AE00C72A5D /* WebDriverResponse.m in Sources */,
+				D8D640CD114312CA00C72A5D /* WebViewDriverSingleton.m in Sources */,
+				D8D640D3114312D800C72A5D /* Cookie.m in Sources */,
+				D8D640D6114312E100C72A5D /* HTTPPNGResponse.m in Sources */,
+				D8D640DA114312EC00C72A5D /* WebDriverHTTPServer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

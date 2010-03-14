@@ -27,6 +27,10 @@ public class IPhoneSimulatorCommandExecutorTest extends AbstractDriverTestCase {
 
   @NoDriverAfterTest
   public void testShouldDetectThatTheIPhoneSimulatorHasUnexpectedlyShutdown() throws Exception {
+	boolean isDev = Boolean.getBoolean("webdriver.iphone.useExisting"); 
+	if (isDev)
+		return;
+	
     if (!(driver instanceof IPhoneSimulatorDriver)) {
       System.out.println(String.format(
           "[%s] Skipping test; requires current driver to be a %s, but instead is a %s",

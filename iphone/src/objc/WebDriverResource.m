@@ -19,8 +19,9 @@
 #import "WebDriverResource.h"
 #import "WebDriverResponse.h"
 #import "NSString+SBJSON.h"
-#import "MainViewController.h"
 #import "errorcodes.h"
+#import "WebViewDriver.h"
+#import "WebViewDriverSingleton.h"
 
 @implementation WebDriverResource
 
@@ -190,6 +191,10 @@
   return response;
 }
 
+- (id<WebViewDriver>)viewController {
+  return [WebViewDriverSingleton instance];
+}
+
 // Get the HTTP response to this request. This method is part of the
 // |HTTPResource| protocol. It is the local entrypoint for creating a response.
 - (id<HTTPResponse,NSObject>)httpResponseForQuery:(NSString *)query
@@ -229,8 +234,8 @@
                                                       signature:methodSignature
                                                       arguments:arguments];
 
-  [[MainViewController sharedInstance]
-   describeLastAction:NSStringFromSelector(selector)];
+  [[self viewController]
+    describeLastAction:NSStringFromSelector(selector)];
   
   // Finally call the invocation and create a response from it.
   response = [self createResponseFromInvocation:invocation];

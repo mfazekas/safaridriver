@@ -1,45 +1,20 @@
 //
-//  WebViewController.h
+//  WebViewDriver.h
 //  iWebDriver
 //
-//  Copyright 2009 Google Inc.
+//  Created by Miklós Fazekas on 1/16/10.
+//  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
-//  Licensed under the Apache License, Version 2.0 (the "License");
-//  you may not use this file except in compliance with the License.
-//  You may obtain a copy of the License at
-//
-//  http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS,
-//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//  See the License for the specific language governing permissions and
-//  limitations under the License.
 
-#import <UIKit/UIKit.h>
+#if TARGET_OS_IPHONE
+#include <UIKit/UIKit.h>
+typedef UIImage ImageType;
+#else
+#include <WebKit/WebKit.h>
+typedef NSImage ImageType;
+#endif
 
-// The WebViewController manages the iWebDriver's WebView.
-@interface WebViewController : UIViewController<UIWebViewDelegate>
-{
- @private
-  // The spec states that the GET message shouldn't return until the new page
-  // is loaded. We need to lock the main thread to implement that. That'll
-  // happen by polling [view isLoaded] but we can break early if the delegate
-  // methods are fired. Note that subframes may still be being loaded.
-  NSCondition *loadLock_;
-  
-  NSString *lastJSResult_;
-	
-  NSURLRequestCachePolicy cachePolicy_;
-  
-  // Pointer to the status / activity label.
-  IBOutlet UILabel *statusLabel_;
-  
-  // This is nil if the last operation succeeded.
-  NSError *lastError_;
-}
-
-@property (retain, readonly) UIWebView *webView;
+@protocol WebViewDriver
 
 - (CGRect)viewableArea;
 - (BOOL)pointIsViewable:(CGPoint)point;
@@ -54,8 +29,7 @@
 // Get the URL of the page we're looking at
 - (NSString *)URL;
 
-// Navigate to a URL.
-// The URL should be specified by the |url| key in the |urlMap|.
+// Navigate to a URL
 - (void)setURL:(NSDictionary *)urlMap;
 
 - (void)forward;
@@ -88,7 +62,7 @@
 - (NSString *)source;
 
 // Get a screenshot of the page we've loaded
-- (UIImage *)screenshot;
+- (ImageType *)screenshot;
 
 - (void)clickOnPageElementAt:(CGPoint)point;
 

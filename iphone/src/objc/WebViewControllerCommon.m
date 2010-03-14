@@ -15,98 +15,54 @@
 //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
-#import "WebViewController.h"
-#import "HTTPServerController.h"
+#import "WebViewControllerCommon.h"
 #import "NSException+WebDriver.h"
 #import "NSURLRequest+IgnoreSSL.h"
-#import "UIResponder+SimulateTouch.h"
 #import "WebDriverPreferences.h"
 #import "WebDriverRequestFetcher.h"
 #import "WebDriverUtilities.h"
 #import <objc/runtime.h>
-#import "RootViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import <QuartzCore/CATransaction.h>
 
-@implementation WebViewController
+@implementation WebViewControllerCommon
 
 @dynamic webView;
+@synthesize delegate=delegate_;
 
-// Executed after the nib loads the interface.
-// Configure the webview to match the mobile safari app.
-- (void)viewDidLoad {
-  [super viewDidLoad];
-  [[self webView] setScalesPageToFit:NO];
-  [[self webView] setDelegate:self];
-
-  loadLock_ = [[NSCondition alloc] init];
-  lastJSResult_ = nil;
-	
-  // Creating a new session if auto-create is enabled
-  if ([[RootViewController sharedInstance] isAutoCreateSession]) {
-    [[HTTPServerController sharedInstance]
-      httpResponseForQuery:@"/hub/session"
-                    method:@"POST"
-                  withData:[@"{\"browserName\":\"firefox\",\"platform\":\"ANY\","
-                            "\"javascriptEnabled\":false,\"version\":\"\"}"
-                            dataUsingEncoding:NSASCIIStringEncoding]];
-  }
-
-  WebDriverPreferences *preferences = [WebDriverPreferences sharedInstance];
-
-  cachePolicy_ = [preferences cache_policy];
-  NSURLCache *sharedCache = [NSURLCache sharedURLCache];
-  [sharedCache setDiskCapacity:[preferences diskCacheCapacity]];
-  [sharedCache setMemoryCapacity:[preferences memoryCacheCapacity]];
-
-  if ([[preferences mode] isEqualToString: @"Server"]) {
-    HTTPServerController* serverController = [HTTPServerController sharedInstance];
-    [serverController setViewController:self];
-    [self describeLastAction:[serverController status]];		
-  } else {
-    WebDriverRequestFetcher* fetcher = [WebDriverRequestFetcher sharedInstance]; 
-    [fetcher setViewController:self];
-    [self describeLastAction:[fetcher status]];		
-  }
+- (void)assertCalledFromUIThread {
+    NSAssert([NSThread isMainThread],@"Should be called from main thread!");
 }
 
-- (void)didReceiveMemoryWarning {
-  NSLog(@"Memory warning recieved.");
-  // TODO(josephg): How can we send this warning to the user? Maybe set the
-  // displayed text; though that could be overwritten basically straight away.
-  [super didReceiveMemoryWarning];
+- (id)initWithWebView:(WebViewType*)webView {
+    self = [super init];
+    if (self != nil) {
+        webView_ = webView;
+        [webView_ retain];
+        loadLock_ = [[NSCondition alloc] init];
+        lastJSResult_ = nil;
+    }
+    return self;
 }
 
 - (void)dealloc {
-  [[self webView] setDelegate:nil];
   [loadLock_ release];
   [lastJSResult_ release];
+  [webView_ release];
+  webView_ = 0;
   [super dealloc];
 }
 
-- (UIWebView *)webView {
-  if (![[self view] isKindOfClass:[UIWebView class]]) {
-    NSLog(@"NIB error: WebViewController's view is not a UIWebView.");
-    return nil;
-  }
-  return (UIWebView *)[self view];
+- (WebViewType *)webView {
+    return webView_;
 }
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-  NSLog(@"shouldStartLoadWithRequest");
-  return YES;
-}
-
-- (void)webViewDidStartLoad:(UIWebView *)webView {
-  NSLog(@"webViewDidStartLoad");
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
+- (void)webViewDidFinishLoad:(WebViewType *)webView {
   NSLog(@"finished loading");
   [loadLock_ signal];
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+- (void)webView:(WebViewType *)webView didFailLoadWithError:(NSError *)error {
   // This is a very troubled method. It can be called multiple times (for each
   // frame of webpage). It is sometimes called even when the page seems to have
   // loaded correctly.
@@ -119,7 +75,22 @@
 #pragma mark Web view controls
 
 - (void)performSelectorOnWebView:(SEL)selector withObject:(id)obj {
+  [self assertCalledFromUIThread];
   [[self webView] performSelector:selector withObject:obj];
+}
+
+- (BOOL)_isWebViewLoading {
+  [self assertCalledFromUIThread];
+  return [[self webView] isLoading];
+}
+
+- (void)isWebViewLoadingOnMT:(NSMutableArray*)result {
+    [result replaceObjectAtIndex:0 withObject:[NSNumber numberWithBool:[self _isWebViewLoading]]];
+}
+- (BOOL)isWebViewLoading {
+  NSMutableArray* isLoading = [NSMutableArray arrayWithObject:[NSNumber numberWithBool:NO]];
+  [self performSelectorOnMainThread:@selector(isWebViewLoadingOnMT:) withObject:isLoading waitUntilDone:YES];
+  return [[isLoading objectAtIndex:0] boolValue];
 }
 
 - (void)waitForLoad {
@@ -133,8 +104,7 @@
   // whether the page is loading content.
   
   [NSThread sleepForTimeInterval:0.2f];
-  
-  while ([[self webView] isLoading]) {
+  while ([self isWebViewLoading]) {
     // Yield.
     [NSThread sleepForTimeInterval:0.01f];
   }  
@@ -159,15 +129,14 @@
    * 
    * The result: The only effective method I can think of is nasty polling.
    */
-  
-  while ([[self webView] isLoading])
+  while ([self isWebViewLoading])
     [NSThread sleepForTimeInterval:0.01f];
   
   [[self webView] performSelectorOnMainThread:selector
                                    withObject:value
                                 waitUntilDone:YES];
 
-  NSLog(@"loading %d", [[self webView] isLoading]);
+  NSLog(@"loading %d", [self isWebViewLoading]);
   
   if (wait)
     [self waitForLoad];
@@ -180,9 +149,8 @@
                                        cachePolicy:cachePolicy_
                                    timeoutInterval:60];
   
-  [self performSelectorOnView:@selector(loadRequest:)
-                   withObject:url
-                waitUntilLoad:YES];
+  [delegate_ loadRequest:url];
+  [self waitForLoad];
 }
 
 - (void)back {
@@ -220,6 +188,7 @@
 // using performSelectorOnMainThread:... which doesn't return a value - so
 // the return value is passed back through a class parameter.
 - (void)jsEvalInternal:(NSString *)script {
+  [self assertCalledFromUIThread];
   // We wrap the eval command in a CATransaction so that we can explicitly
   // force any UI updates that might occur as a side effect of executing the
   // javascript to finish rendering before we return control back to the HTTP
@@ -280,7 +249,6 @@
   return result;
 }
 
-
 - (BOOL)testJsExpression:(NSString *)format, ... {
   if (format == nil) {
     [NSException raise:@"invalidArguments" format:@"Invalid arguments for jsEval"];
@@ -319,19 +287,8 @@
 }
 
 // Takes a screenshot.
-- (UIImage *)screenshot {
-  UIGraphicsBeginImageContext([[self webView] bounds].size);
-  [[self webView].layer renderInContext:UIGraphicsGetCurrentContext()];
-  UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
-  UIGraphicsEndImageContext();
-  
-  // dump the screenshot into a file for debugging
-  //NSString *path = [[[NSSearchPathForDirectoriesInDomains
-  //   (NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
-  //  stringByAppendingPathComponent:@"screenshot.png"] retain];
-  //[UIImagePNGRepresentation(viewImage) writeToFile:path atomically:YES];
-  
-  return viewImage;
+- (ImageType *)screenshot {
+    return [delegate_ screenshot];
 }
 
 - (NSString *)URL {
@@ -339,7 +296,7 @@
 }
 
 - (void)describeLastAction:(NSString *)status {
-  [statusLabel_ setText:status];
+    [delegate_ describeLastAction:status];
 }
 
 - (CGRect)viewableArea {
@@ -363,33 +320,12 @@
   [self jsEval:@"window.scroll(%f - window.innerWidth / 2, %f - window.innerHeight / 2);", point.x, point.y];
 }
 
-// Translate pixels in webpage-space to pixels in view space.
-- (CGPoint)translatePageCoordinateToView:(CGPoint)point {
-  CGRect viewBounds = [[self webView] bounds];
-  CGRect pageBounds = [self viewableArea];
-  
-  // ... And then its just a linear transformation.
-  float scale = viewBounds.size.width / pageBounds.size.width;
-  CGPoint transformedPoint;
-  transformedPoint.x = (point.x - pageBounds.origin.x) * scale;
-  transformedPoint.y = (point.y - pageBounds.origin.y) * scale;
-  
-  NSLog(@"%@ -> %@",
-        NSStringFromCGPoint(point),
-        NSStringFromCGPoint(transformedPoint));
-  
-  return transformedPoint;
-}
-
 - (void)clickOnPageElementAt:(CGPoint)point {
   if (![self pointIsViewable:point]) {
     [self scrollIntoView:point];
   }
   
-  CGPoint pointInViewSpace = [self translatePageCoordinateToView:point];
-  
-  NSLog(@"simulating a click at %@", NSStringFromCGPoint(pointInViewSpace));
-  [[self webView] simulateTapAt:pointInViewSpace];
+  [delegate_ clickOnPageElementAt:point];
 }
 
 // I don't know why, but this doesn't work in the current version of
