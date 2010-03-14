@@ -7,6 +7,7 @@
 //
 
 #import "SafariExtension.h"
+#import "HTTPServerController.h"
 #import <WebKit/WebKit.h>
 
 @interface NSDocument(BrowserDocumentProtocol)
@@ -26,9 +27,9 @@
   if (!loaded_) {
     loaded_ = true;
     NSLog(@"SafariDriver init");
+    [WebViewController createSharedInstance:webView];
+    NSLog(@"WebView located!");
   }
-  [[WebViewController sharedInstance] setWebView:webView];
-  NSLog(@"WebView located!");
 }
 
 - (void)onWebViewLoaded:(NSNotification*)n {
@@ -54,6 +55,7 @@
   if (webView = [self viewViewFromDocument]) {
     [self gotWebView:webView];
   }
+  [HTTPServerController sharedInstance];
 }
 
 + (void)load {  

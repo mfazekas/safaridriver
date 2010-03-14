@@ -1,0 +1,16 @@
+1. CocoaHTTPLibrary:
+- fixed patch for new version (also removed second HTTPResponse, added category methods to HTTPConneciton.m, as HTTPConnection.m now includes HTTPResponse directly and via HTTPAsyncFileResponse, by default that includes both which errors because is duplicate definiton)
+2. 
+       
+
+TODO:
+- IntegrationTest is more a demo than a test
+- Threading: the thredading should be revised. We do call a lot of WebView methods from secondary threads. 
+- Some parts of SafarDriver client part was copied from chrome client some part from firefox client, would be good to do code reuse insted of copy paste
+- Conform style guide                            
+
+
+How to run iphone tests under the debugger:                                     
+1.) start webdriver in simulator
+2.) rake test_iphone_client JVM_ARGS='-Dwebdriver.iphone.useExisting=true'   
+3.) rake test_iphone_client JVM_ARGS='-Dwebdriver.tests.class=org.openqa.selenium.JavascriptEnabledDriverTest -Dwebdriver.tests.method=testShouldBeAbleToGetTheLocationOfAnElement' 

@@ -11,12 +11,17 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestResult;
 
+import static org.openqa.selenium.Ignore.Driver.REMOTE;
+import static org.openqa.selenium.Ignore.Driver.IPHONE;
+
 public class SafariDriverTestSuite extends TestCase {
   public static Test suite() throws Exception {
     return new TestSuiteBuilder()
         .addSourceDir("safari")
         .addSourceDir("common")
         .usingDriver(SafariDriver.class)
+        .exclude(REMOTE)
+        .exclude(IPHONE)
         .includeJavascriptTests()
         .create();
   }

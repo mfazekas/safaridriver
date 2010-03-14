@@ -1,36 +1,25 @@
 //
-//  WebViewController.h
+//  WebViewController.m
 //  SafariDriver
 //
-//  Created by Andrian Kurniady on 10/13/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Created by Miklós Fazekas on 1/5/10.
+//  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
-#import <WebKit/WebKit.h>
-#import "HTTPServerController.h"
-#import "WebDriverPreferences.h"
+#import "WebViewController.h"
+#import "WebViewControllerCommon.h"
+@class WebView;
 
-@interface WebViewController : NSObject {
-  WebView *webView_;
-  
-  NSString *lastJSResult_;
-
-  NSURLRequestCachePolicy cachePolicy_;
-  
-  HTTPServerController *httpServerController;
+@interface WebViewController : NSObject<WebViewControllerDelegate>
+{
+  WebView* webView_;
+  WebViewControllerCommon* webViewControllerCommon_;
 }
 
-@property (assign, nonatomic) WebView *webView;
-
-- (void)setURL:(NSString *)urlString;
-- (NSString *)URL;
-- (NSString *)currentTitle;
-- (void)back;
-- (void)forward;
-- (NSString *)source;
-- (NSString *)jsEval:(NSString *)format, ...;
-
 + (id)sharedInstance;
++ (id)createSharedInstance:(WebView*)webView;
+
+- (id) initWithWebView:(WebView*)webView;
+- (id<WebViewDriver>) webViewDriver;
 
 @end
