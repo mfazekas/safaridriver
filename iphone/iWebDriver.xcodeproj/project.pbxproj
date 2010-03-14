@@ -881,7 +881,7 @@
 				OBJROOT = "$(SYMROOT)";
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.2.1;
+				SDKROOT = iphoneos3.1.2;
 				SKIP_INSTALL = NO;
 			};
 			name = Debug;

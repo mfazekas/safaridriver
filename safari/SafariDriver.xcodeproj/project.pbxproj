@@ -36,70 +36,77 @@
 		CA5A68C9110825E500BF1BC8 /* WebDriverResource.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A68A8110825E500BF1BC8 /* WebDriverResource.m */; };
 		CA5A68CA110825E500BF1BC8 /* WebDriverResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A68AA110825E500BF1BC8 /* WebDriverResponse.m */; };
 		CA5A68CB110825E500BF1BC8 /* WebDriverUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A68AC110825E500BF1BC8 /* WebDriverUtilities.m */; };
-		CA5A68D81108262400BF1BC8 /* libCocoaHTTPServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA5A68D71108261D00BF1BC8 /* libCocoaHTTPServer.a */; };
 		CA5A69231108360500BF1BC8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA5A69221108360500BF1BC8 /* WebKit.framework */; };
-		CA5DFD941112BD6600DCE78D /* libjson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA5DFD671112BD0F00DCE78D /* libjson.a */; };
+		D863519A114C5CA7007B9391 /* libjson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B937F5114BC4FA006F8CE8 /* libjson.a */; };
+		D8B93863114BC920006F8CE8 /* libCocoaHTTPServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B93801114BC515006F8CE8 /* libCocoaHTTPServer.a */; };
 		D8F6C985110D6B19009DADFF /* BundleInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6C984110D6B19009DADFF /* BundleInjector.m */; };
 		D8F6CA48110D6C5D009DADFF /* BundleInjector.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8F6C97E110D6AE8009DADFF /* BundleInjector.dylib */; };
 		D8F6CBE5110E596E009DADFF /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F6CBE4110E596E009DADFF /* libcrypto.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CA5A68D61108261D00BF1BC8 /* PBXContainerItemProxy */ = {
+		D8635198114C5C90007B9391 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = FE2BBD7F0D8B0D3900184787;
+			remoteInfo = libjson;
+		};
+		D8B937F0114BC4FA006F8CE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53D229810C96121600276605;
+			remoteInfo = JSON;
+		};
+		D8B937F2114BC4FA006F8CE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53D2298D0C96122A00276605;
+			remoteInfo = Tests;
+		};
+		D8B937F4114BC4FA006F8CE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FE2BBD800D8B0D3900184787;
+			remoteInfo = libjson;
+		};
+		D8B937F6114BC4FA006F8CE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FE2BBDAB0D8B0EE000184787;
+			remoteInfo = libjsontests;
+		};
+		D8B937F8114BC4FA006F8CE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53EF4D400DC247B3005F5E6D;
+			remoteInfo = bench;
+		};
+		D8B93800114BC515006F8CE8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CA5A68CF1108261D00BF1BC8 /* CocoaHTTPServerLibrary.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8319631B0F28464E005D1D21;
 			remoteInfo = CocoaHTTPServer;
 		};
-		CA5DFD621112BD0F00DCE78D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 53D229810C96121600276605 /* JSON.framework */;
-			remoteInfo = JSON;
-		};
-		CA5DFD641112BD0F00DCE78D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 53D2298D0C96122A00276605 /* Tests.octest */;
-			remoteInfo = Tests;
-		};
-		CA5DFD661112BD0F00DCE78D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FE2BBD800D8B0D3900184787 /* libjson.a */;
-			remoteInfo = libjson;
-		};
-		CA5DFD681112BD0F00DCE78D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FE2BBDAB0D8B0EE000184787 /* libjsontests.octest */;
-			remoteInfo = libjsontests;
-		};
-		CA5DFD6A1112BD0F00DCE78D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 53EF4D400DC247B3005F5E6D /* bench */;
-			remoteInfo = bench;
-		};
-		CA5DFDC11112BEEC00DCE78D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = FE2BBD7F0D8B0D3900184787 /* libjson */;
-			remoteInfo = libjson;
-		};
-		D8F6C62C110C970A009DADFF /* PBXContainerItemProxy */ = {
+		D8B93832114BC7CB006F8CE8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CA5A68CF1108261D00BF1BC8 /* CocoaHTTPServerLibrary.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 8319631A0F28464E005D1D21;
 			remoteInfo = CocoaHTTPServer;
+		};
+		D8B9386A114BCA5F006F8CE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CABBA68C1075E46400BABE9A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8F6C97D110D6AE8009DADFF;
+			remoteInfo = BundleInjector;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -174,10 +181,10 @@
 		CA5A68AA110825E500BF1BC8 /* WebDriverResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebDriverResponse.m; sourceTree = "<group>"; };
 		CA5A68AB110825E500BF1BC8 /* WebDriverUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebDriverUtilities.h; sourceTree = "<group>"; };
 		CA5A68AC110825E500BF1BC8 /* WebDriverUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebDriverUtilities.m; sourceTree = "<group>"; };
-		CA5A68CF1108261D00BF1BC8 /* CocoaHTTPServerLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocoaHTTPServerLibrary.xcodeproj; path = "lib/buildtime-src/cocoahttpserver/CocoaHTTPServerLibrary.xcodeproj"; sourceTree = "<group>"; };
+		CA5A68CF1108261D00BF1BC8 /* CocoaHTTPServerLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocoaHTTPServerLibrary.xcodeproj; path = "../iphone/lib/buildtime-src/cocoahttpserver/CocoaHTTPServerLibrary.xcodeproj"; sourceTree = "<group>"; };
 		CA5A6906110833FB00BF1BC8 /* SafariExtension.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SafariExtension.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA5A69221108360500BF1BC8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
-		CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JSON.xcodeproj; path = "lib/buildtime-src/json-framework/project/JSON.xcodeproj"; sourceTree = "<group>"; };
+		CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JSON.xcodeproj; path = "../iphone/lib/buildtime-src/json-framework/project/JSON.xcodeproj"; sourceTree = "<group>"; };
 		D8F6C97E110D6AE8009DADFF /* BundleInjector.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = BundleInjector.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8F6C984110D6B19009DADFF /* BundleInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BundleInjector.m; sourceTree = "<group>"; };
 		D8F6CAAC110E42D3009DADFF /* SafariExtensionTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SafariExtensionTest-Info.plist"; sourceTree = "<group>"; };
@@ -189,10 +196,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA5A68D81108262400BF1BC8 /* libCocoaHTTPServer.a in Frameworks */,
+				D863519A114C5CA7007B9391 /* libjson.a in Frameworks */,
 				CA5A69231108360500BF1BC8 /* WebKit.framework in Frameworks */,
 				D8F6CBE5110E596E009DADFF /* libcrypto.dylib in Frameworks */,
-				CA5DFD941112BD6600DCE78D /* libjson.a in Frameworks */,
+				D8B93863114BC920006F8CE8 /* libCocoaHTTPServer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,26 +295,6 @@
 			path = src/objc/loader;
 			sourceTree = "<group>";
 		};
-		CA5A68D01108261D00BF1BC8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CA5A68D71108261D00BF1BC8 /* libCocoaHTTPServer.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		CA5DFD571112BD0F00DCE78D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CA5DFD631112BD0F00DCE78D /* JSON.framework */,
-				CA5DFD651112BD0F00DCE78D /* Tests.octest */,
-				CA5DFD671112BD0F00DCE78D /* libjson.a */,
-				CA5DFD691112BD0F00DCE78D /* libjsontests.octest */,
-				CA5DFD6B1112BD0F00DCE78D /* bench */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		CABBA68A1075E46400BABE9A = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +315,26 @@
 			children = (
 				CA5A6906110833FB00BF1BC8 /* SafariExtension.bundle */,
 				D8F6C97E110D6AE8009DADFF /* BundleInjector.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D8B937E7114BC4FA006F8CE8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8B937F1114BC4FA006F8CE8 /* JSON.framework */,
+				D8B937F3114BC4FA006F8CE8 /* Tests.octest */,
+				D8B937F5114BC4FA006F8CE8 /* libjson.a */,
+				D8B937F7114BC4FA006F8CE8 /* libjsontests.octest */,
+				D8B937F9114BC4FA006F8CE8 /* bench */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D8B937FD114BC515006F8CE8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8B93801114BC515006F8CE8 /* libCocoaHTTPServer.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -357,8 +364,9 @@
 			buildRules = (
 			);
 			dependencies = (
-				D8F6C62D110C970A009DADFF /* PBXTargetDependency */,
-				CA5DFDC21112BEEC00DCE78D /* PBXTargetDependency */,
+				D8B93833114BC7CB006F8CE8 /* PBXTargetDependency */,
+				D8B9386B114BCA5F006F8CE8 /* PBXTargetDependency */,
+				D8635199114C5C90007B9391 /* PBXTargetDependency */,
 			);
 			name = SafariExtension;
 			productName = SafariExtension;
@@ -395,11 +403,11 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = CA5A68D01108261D00BF1BC8 /* Products */;
+					ProductGroup = D8B937FD114BC515006F8CE8 /* Products */;
 					ProjectRef = CA5A68CF1108261D00BF1BC8 /* CocoaHTTPServerLibrary.xcodeproj */;
 				},
 				{
-					ProductGroup = CA5DFD571112BD0F00DCE78D /* Products */;
+					ProductGroup = D8B937E7114BC4FA006F8CE8 /* Products */;
 					ProjectRef = CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */;
 				},
 			);
@@ -412,46 +420,46 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		CA5A68D71108261D00BF1BC8 /* libCocoaHTTPServer.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libCocoaHTTPServer.a;
-			remoteRef = CA5A68D61108261D00BF1BC8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CA5DFD631112BD0F00DCE78D /* JSON.framework */ = {
+		D8B937F1114BC4FA006F8CE8 /* JSON.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = JSON.framework;
-			remoteRef = CA5DFD621112BD0F00DCE78D /* PBXContainerItemProxy */;
+			remoteRef = D8B937F0114BC4FA006F8CE8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		CA5DFD651112BD0F00DCE78D /* Tests.octest */ = {
+		D8B937F3114BC4FA006F8CE8 /* Tests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = Tests.octest;
-			remoteRef = CA5DFD641112BD0F00DCE78D /* PBXContainerItemProxy */;
+			remoteRef = D8B937F2114BC4FA006F8CE8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		CA5DFD671112BD0F00DCE78D /* libjson.a */ = {
+		D8B937F5114BC4FA006F8CE8 /* libjson.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libjson.a;
-			remoteRef = CA5DFD661112BD0F00DCE78D /* PBXContainerItemProxy */;
+			remoteRef = D8B937F4114BC4FA006F8CE8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		CA5DFD691112BD0F00DCE78D /* libjsontests.octest */ = {
+		D8B937F7114BC4FA006F8CE8 /* libjsontests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = libjsontests.octest;
-			remoteRef = CA5DFD681112BD0F00DCE78D /* PBXContainerItemProxy */;
+			remoteRef = D8B937F6114BC4FA006F8CE8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		CA5DFD6B1112BD0F00DCE78D /* bench */ = {
+		D8B937F9114BC4FA006F8CE8 /* bench */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = bench;
-			remoteRef = CA5DFD6A1112BD0F00DCE78D /* PBXContainerItemProxy */;
+			remoteRef = D8B937F8114BC4FA006F8CE8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D8B93801114BC515006F8CE8 /* libCocoaHTTPServer.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCocoaHTTPServer.a;
+			remoteRef = D8B93800114BC515006F8CE8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -514,15 +522,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CA5DFDC21112BEEC00DCE78D /* PBXTargetDependency */ = {
+		D8635199114C5C90007B9391 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = libjson;
-			targetProxy = CA5DFDC11112BEEC00DCE78D /* PBXContainerItemProxy */;
+			targetProxy = D8635198114C5C90007B9391 /* PBXContainerItemProxy */;
 		};
-		D8F6C62D110C970A009DADFF /* PBXTargetDependency */ = {
+		D8B93833114BC7CB006F8CE8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CocoaHTTPServer;
-			targetProxy = D8F6C62C110C970A009DADFF /* PBXContainerItemProxy */;
+			targetProxy = D8B93832114BC7CB006F8CE8 /* PBXContainerItemProxy */;
+		};
+		D8B9386B114BCA5F006F8CE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8F6C97D110D6AE8009DADFF /* BundleInjector */;
+			targetProxy = D8B9386A114BCA5F006F8CE8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -530,9 +543,10 @@
 		CABBA68D1075E46400BABE9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COCOAHTTPSERVER_HEADERS = "$(PROJECT_DIR)/lib/buildtime-src/cocoahttpserver/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/usr/local/include";
+				COCOAHTTPSERVER_HEADERS = "$(IPHONE_SHARED_ROOT)/lib/buildtime-src/cocoahttpserver/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/usr/local/include";
 				COPY_PHASE_STRIP = NO;
-				JSON_HEADERS = "$(PROJECT_DIR)/lib/buildtime-src/json-framework/project/Source/";
+				IPHONE_SHARED_ROOT = "$(PROJECT_DIR)/../iphone";
+				JSON_HEADERS = "$(IPHONE_SHARED_ROOT)/lib/buildtime-src/json-framework/project/Source/";
 			};
 			name = Debug;
 		};
@@ -541,9 +555,10 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
 				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
-				COCOAHTTPSERVER_HEADERS = "$(PROJECT_DIR)/lib/buildtime-src/cocoahttpserver/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/usr/local/include";
+				COCOAHTTPSERVER_HEADERS = "$(IPHONE_SHARED_ROOT)/lib/buildtime-src/cocoahttpserver/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/usr/local/include";
 				COPY_PHASE_STRIP = YES;
-				JSON_HEADERS = "$(PROJECT_DIR)/lib/buildtime-src/json-framework/project/Source/";
+				IPHONE_SHARED_ROOT = "$(PROJECT_DIR)/../iphone";
+				JSON_HEADERS = "$(IPHONE_SHARED_ROOT)/lib/buildtime-src/json-framework/project/Source/";
 			};
 			name = Release;
 		};
@@ -552,13 +567,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
-				);
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/lib/cocoahttpserver/build/Debug\"";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/lib/cocoahttpserver/build/Debug\"";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -597,13 +606,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
-				);
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/lib/cocoahttpserver/build/Debug\"";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/lib/cocoahttpserver/build/Debug\"";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
