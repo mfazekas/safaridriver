@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		CA5A68AE110825E500BF1BC8 /* SafariExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A6873110825E500BF1BC8 /* SafariExtension.m */; };
 		CA5A69231108360500BF1BC8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA5A69221108360500BF1BC8 /* WebKit.framework */; };
+		D80C3001115F459000EC93CE /* CookieStoreTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D80C3000115F459000EC93CE /* CookieStoreTest.m */; };
+		D80C301B115F471E00EC93CE /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D80C301A115F471E00EC93CE /* SenTestingKit.framework */; };
+		D80C3131115F525E00EC93CE /* PerProcessHTTPCookieStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D80C3130115F525E00EC93CE /* PerProcessHTTPCookieStore.m */; };
+		D80C3143115F533100EC93CE /* SafariExtensionPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = D80C3142115F533100EC93CE /* SafariExtensionPaths.m */; };
+		D80C3144115F533100EC93CE /* SafariExtensionPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = D80C3142115F533100EC93CE /* SafariExtensionPaths.m */; };
+		D80C317C115F584700EC93CE /* PerProcessHTTPCookieStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D80C3130115F525E00EC93CE /* PerProcessHTTPCookieStore.m */; };
+		D80C3193115F59C500EC93CE /* PerProcessSafariFiles.m in Sources */ = {isa = PBXBuildFile; fileRef = D80C3192115F59C500EC93CE /* PerProcessSafariFiles.m */; };
+		D80C3194115F59C500EC93CE /* PerProcessSafariFiles.m in Sources */ = {isa = PBXBuildFile; fileRef = D80C3192115F59C500EC93CE /* PerProcessSafariFiles.m */; };
 		D863519A114C5CA7007B9391 /* libjson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B937F5114BC4FA006F8CE8 /* libjson.a */; };
 		D8635313114CE51F007B9391 /* SessionRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = D8635312114CE51F007B9391 /* SessionRoot.m */; };
 		D8635316114CE52C007B9391 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = D8635315114CE52C007B9391 /* Session.m */; };
@@ -133,6 +141,16 @@
 		CA5A6906110833FB00BF1BC8 /* SafariExtension.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SafariExtension.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA5A69221108360500BF1BC8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
 		CA5DFD561112BD0F00DCE78D /* JSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JSON.xcodeproj; path = "../iphone/lib/buildtime-src/json-framework/project/JSON.xcodeproj"; sourceTree = "<group>"; };
+		D80C2FFB115F455D00EC93CE /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D80C2FFC115F455D00EC93CE /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
+		D80C3000115F459000EC93CE /* CookieStoreTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CookieStoreTest.m; sourceTree = "<group>"; };
+		D80C301A115F471E00EC93CE /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/SenTestingKit.framework; sourceTree = SYSTEM_DEVELOPER_DIR; };
+		D80C312F115F525E00EC93CE /* PerProcessHTTPCookieStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerProcessHTTPCookieStore.h; sourceTree = "<group>"; };
+		D80C3130115F525E00EC93CE /* PerProcessHTTPCookieStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerProcessHTTPCookieStore.m; sourceTree = "<group>"; };
+		D80C3141115F533100EC93CE /* SafariExtensionPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafariExtensionPaths.h; sourceTree = "<group>"; };
+		D80C3142115F533100EC93CE /* SafariExtensionPaths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafariExtensionPaths.m; sourceTree = "<group>"; };
+		D80C3191115F59C500EC93CE /* PerProcessSafariFiles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerProcessSafariFiles.h; sourceTree = "<group>"; };
+		D80C3192115F59C500EC93CE /* PerProcessSafariFiles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerProcessSafariFiles.m; sourceTree = "<group>"; };
 		D863530F114CE50F007B9391 /* WebViewDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewDriver.h; sourceTree = "<group>"; };
 		D8635311114CE51F007B9391 /* SessionRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionRoot.h; sourceTree = "<group>"; };
 		D8635312114CE51F007B9391 /* SessionRoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionRoot.m; sourceTree = "<group>"; };
@@ -213,6 +231,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D80C2FF8115F455D00EC93CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D80C301B115F471E00EC93CE /* SenTestingKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8F6C97C110D6AE8009DADFF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -226,6 +252,8 @@
 		CA5A6871110825E500BF1BC8 /* extension */ = {
 			isa = PBXGroup;
 			children = (
+				D80C3141115F533100EC93CE /* SafariExtensionPaths.h */,
+				D80C3142115F533100EC93CE /* SafariExtensionPaths.m */,
 				D8635494114CFE07007B9391 /* WebViewController.m */,
 				D8635495114CFE07007B9391 /* WebViewDriverSingleton.h */,
 				D8635496114CFE07007B9391 /* WebViewDriverSingleton.m */,
@@ -233,6 +261,10 @@
 				D8635492114CFDFD007B9391 /* WebDriverPreferences.m */,
 				CA5A6872110825E500BF1BC8 /* SafariExtension.h */,
 				CA5A6873110825E500BF1BC8 /* SafariExtension.m */,
+				D80C312F115F525E00EC93CE /* PerProcessHTTPCookieStore.h */,
+				D80C3130115F525E00EC93CE /* PerProcessHTTPCookieStore.m */,
+				D80C3191115F59C500EC93CE /* PerProcessSafariFiles.h */,
+				D80C3192115F59C500EC93CE /* PerProcessSafariFiles.m */,
 			);
 			name = extension;
 			path = src/objc/extension;
@@ -286,11 +318,14 @@
 				D8635473114CF6CA007B9391 /* Mac specific */,
 				CA5A6876110825E500BF1BC8 /* Web server extensions */,
 				CA5A68AD110825E500BF1BC8 /* loader */,
+				D80C3003115F45AF00EC93CE /* objc */,
 				CABBA6D81075EA0500BABE9A /* Products */,
 				CA5A69221108360500BF1BC8 /* WebKit.framework */,
 				D8F6CBE4110E596E009DADFF /* libcrypto.dylib */,
 				D86354CB114CFEDE007B9391 /* libsqlite3.dylib */,
 				D86354D2114CFF1A007B9391 /* QuartzCore.framework */,
+				D80C2FFC115F455D00EC93CE /* UnitTests-Info.plist */,
+				D80C301A115F471E00EC93CE /* SenTestingKit.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -299,8 +334,18 @@
 			children = (
 				CA5A6906110833FB00BF1BC8 /* SafariExtension.bundle */,
 				D8F6C97E110D6AE8009DADFF /* BundleInjector.dylib */,
+				D80C2FFB115F455D00EC93CE /* UnitTests.octest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D80C3003115F45AF00EC93CE /* objc */ = {
+			isa = PBXGroup;
+			children = (
+				D80C3000115F459000EC93CE /* CookieStoreTest.m */,
+			);
+			name = objc;
+			path = test/objc;
 			sourceTree = "<group>";
 		};
 		D86352EE114CE495007B9391 /* REST Service */ = {
@@ -437,6 +482,24 @@
 			productReference = CA5A6906110833FB00BF1BC8 /* SafariExtension.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
+		D80C2FFA115F455D00EC93CE /* UnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D80C2FFF115F455E00EC93CE /* Build configuration list for PBXNativeTarget "UnitTests" */;
+			buildPhases = (
+				D80C2FF6115F455D00EC93CE /* Resources */,
+				D80C2FF7115F455D00EC93CE /* Sources */,
+				D80C2FF8115F455D00EC93CE /* Frameworks */,
+				D80C2FF9115F455D00EC93CE /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UnitTests;
+			productName = UnitTests;
+			productReference = D80C2FFB115F455D00EC93CE /* UnitTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		D8F6C97D110D6AE8009DADFF /* BundleInjector */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8F6C983110D6AF9009DADFF /* Build configuration list for PBXNativeTarget "BundleInjector" */;
@@ -479,6 +542,7 @@
 			targets = (
 				CABBA6D61075EA0500BABE9A /* SafariExtension */,
 				D8F6C97D110D6AE8009DADFF /* BundleInjector */,
+				D80C2FFA115F455D00EC93CE /* UnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -536,7 +600,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D80C2FF6115F455D00EC93CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D80C2FF9115F455D00EC93CE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CABBA6D41075EA0500BABE9A /* Sources */ = {
@@ -573,6 +660,20 @@
 				D86354B4114CFE59007B9391 /* NSURLRequest+IgnoreSSL.m in Sources */,
 				D86354C0114CFEA1007B9391 /* WebDriverHTTPConnection.m in Sources */,
 				D86354C1114CFEA1007B9391 /* WebDriverHTTPServer.m in Sources */,
+				D80C3131115F525E00EC93CE /* PerProcessHTTPCookieStore.m in Sources */,
+				D80C3143115F533100EC93CE /* SafariExtensionPaths.m in Sources */,
+				D80C3193115F59C500EC93CE /* PerProcessSafariFiles.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D80C2FF7115F455D00EC93CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D80C3001115F459000EC93CE /* CookieStoreTest.m in Sources */,
+				D80C3144115F533100EC93CE /* SafariExtensionPaths.m in Sources */,
+				D80C317C115F584700EC93CE /* PerProcessHTTPCookieStore.m in Sources */,
+				D80C3194115F59C500EC93CE /* PerProcessSafariFiles.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,6 +804,65 @@
 			};
 			name = Release;
 		};
+		D80C2FFD115F455E00EC93CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "UnitTests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = UnitTests;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D80C2FFE115F455E00EC93CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(DEVELOPER_DIR)/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks\"";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "UnitTests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = UnitTests;
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		D8F6C97F110D6AE9009DADFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -770,6 +930,15 @@
 			buildConfigurations = (
 				CABBA6DB1075EA0600BABE9A /* Debug */,
 				CABBA6DC1075EA0600BABE9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D80C2FFF115F455E00EC93CE /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D80C2FFD115F455E00EC93CE /* Debug */,
+				D80C2FFE115F455E00EC93CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

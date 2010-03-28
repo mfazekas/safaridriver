@@ -8,6 +8,7 @@
 
 #import "SafariExtension.h"
 #import "HTTPServerController.h"
+#import "PerProcessSafariFiles.h"
 #import <WebKit/WebKit.h>
 
 @interface NSDocument(BrowserDocumentProtocol)
@@ -55,6 +56,7 @@
   if (webView = [self viewViewFromDocument]) {
     [self gotWebView:webView];
   }
+  [PerProcessSafariFiles init];
   [HTTPServerController sharedInstance];
 }
 
