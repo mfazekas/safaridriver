@@ -167,7 +167,6 @@ static NSString* const ELEMENT_ID_KEY = @"ELEMENT";
     "  triggerMouseEvent(element, 'mouseover');\n"
     "  triggerMouseEvent(element, 'mousemove');\n"
     "  triggerMouseEvent(element, 'mousedown');\n"
-    "  document.title = 'checking focus';\n"
     "  if (element.ownerDocument.activeElement != element) {\n"
     "    if (element.ownerDocument.activeElement) {\n"
     "      element.ownerDocument.activeElement.blur();\n"
