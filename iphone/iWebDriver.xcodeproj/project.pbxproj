@@ -91,6 +91,7 @@
 		D8D640D6114312E100C72A5D /* HTTPPNGResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D715550FE107B500CC479E /* HTTPPNGResponse.m */; };
 		D8D640DA114312EC00C72A5D /* WebDriverHTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83615DFF0EF619230028DAE5 /* WebDriverHTTPServer.m */; };
 		D8D640E6114313A900C72A5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 642C489E112260150064EB9C /* QuartzCore.framework */; };
+		D8F64D6D1169B30E00F50C03 /* json2.js in Resources */ = {isa = PBXBuildFile; fileRef = D8F64D601169B30200F50C03 /* json2.js */; };
 		D8F6CCAF110F8A27009DADFF /* WebViewControllerCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6CCAE110F8A27009DADFF /* WebViewControllerCommon.m */; };
 		FD61E6990FE150E5006E1274 /* WebDriverUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = FD61E6980FE150E5006E1274 /* WebDriverUtilities.m */; };
 		FD61E69E0FE151A4006E1274 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FD61E69D0FE151A4006E1274 /* libsqlite3.dylib */; };
@@ -219,6 +220,7 @@
 		D85664F61145713C00F1D416 /* WebViewDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewDriver.h; sourceTree = "<group>"; };
 		D8851F721142A4B1005013C8 /* WebViewDriverSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewDriverSingleton.h; path = Classes/WebViewDriverSingleton.h; sourceTree = "<group>"; };
 		D8851F731142A4B1005013C8 /* WebViewDriverSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewDriverSingleton.m; path = Classes/WebViewDriverSingleton.m; sourceTree = "<group>"; };
+		D8F64D601169B30200F50C03 /* json2.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = json2.js; path = src/js/json2.js; sourceTree = SOURCE_ROOT; };
 		D8F6CCAD110F8A27009DADFF /* WebViewControllerCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewControllerCommon.h; sourceTree = "<group>"; };
 		D8F6CCAE110F8A27009DADFF /* WebViewControllerCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewControllerCommon.m; sourceTree = "<group>"; };
 		FD61E6970FE150E5006E1274 /* WebDriverUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebDriverUtilities.h; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D8F64D601169B30200F50C03 /* json2.js */,
 				8311AB790F44EF0500921B78 /* selenium-icon.png */,
 				280E754A0DD40C5E005A515E /* FlipsideView.xib */,
 				8399863B0EE3A2E70074D106 /* MainView.xib */,
@@ -626,6 +629,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8F64D6D1169B30E00F50C03 /* json2.js in Resources */,
 				280E754D0DD40C5E005A515E /* FlipsideView.xib in Resources */,
 				280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */,
 				8399863C0EE3A2E70074D106 /* MainView.xib in Resources */,

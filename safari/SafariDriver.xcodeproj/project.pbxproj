@@ -50,6 +50,13 @@
 		D86354CC114CFEDE007B9391 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D86354CB114CFEDE007B9391 /* libsqlite3.dylib */; };
 		D86354D3114CFF1A007B9391 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86354D2114CFF1A007B9391 /* QuartzCore.framework */; };
 		D8B93863114BC920006F8CE8 /* libCocoaHTTPServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B93801114BC515006F8CE8 /* libCocoaHTTPServer.a */; };
+		D8DDB64211678AB300E7A62E /* PerProcessSafariFilesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DDB64111678AB300E7A62E /* PerProcessSafariFilesTest.m */; };
+		D8DDB66F11678F5E00E7A62E /* PerProcessSafariFilesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DDB64111678AB300E7A62E /* PerProcessSafariFilesTest.m */; };
+		D8DDB67011678F6800E7A62E /* PerProcessSafariFiles.m in Sources */ = {isa = PBXBuildFile; fileRef = D80C3192115F59C500EC93CE /* PerProcessSafariFiles.m */; };
+		D8DDB67711678FA700E7A62E /* SafariExtensionPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = D80C3142115F533100EC93CE /* SafariExtensionPaths.m */; };
+		D8DDB67811678FAE00E7A62E /* PerProcessHTTPCookieStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D80C3130115F525E00EC93CE /* PerProcessHTTPCookieStore.m */; };
+		D8F64C4F116901BC00F50C03 /* json2.js in Sources */ = {isa = PBXBuildFile; fileRef = D8F64C4D116901BC00F50C03 /* json2.js */; };
+		D8F64C7D1169032D00F50C03 /* json2.js in Resources */ = {isa = PBXBuildFile; fileRef = D8F64C4D116901BC00F50C03 /* json2.js */; };
 		D8F6C985110D6B19009DADFF /* BundleInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6C984110D6B19009DADFF /* BundleInjector.m */; };
 		D8F6CA48110D6C5D009DADFF /* BundleInjector.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8F6C97E110D6AE8009DADFF /* BundleInjector.dylib */; };
 		D8F6CBE5110E596E009DADFF /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F6CBE4110E596E009DADFF /* libcrypto.dylib */; };
@@ -212,6 +219,10 @@
 		D86354BF114CFEA1007B9391 /* WebDriverHTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebDriverHTTPServer.m; sourceTree = "<group>"; };
 		D86354CB114CFEDE007B9391 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = "<absolute>"; };
 		D86354D2114CFF1A007B9391 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
+		D8DDB64111678AB300E7A62E /* PerProcessSafariFilesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerProcessSafariFilesTest.m; sourceTree = "<group>"; };
+		D8DDB66811678F3C00E7A62E /* IntegrationTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntegrationTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8DDB66911678F3C00E7A62E /* IntegrationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IntegrationTests-Info.plist"; sourceTree = "<group>"; };
+		D8F64C4D116901BC00F50C03 /* json2.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; lineEnding = 0; name = json2.js; path = ../iphone/src/js/json2.js; sourceTree = SOURCE_ROOT; };
 		D8F6C97E110D6AE8009DADFF /* BundleInjector.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = BundleInjector.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8F6C984110D6B19009DADFF /* BundleInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BundleInjector.m; sourceTree = "<group>"; };
 		D8F6CBE4110E596E009DADFF /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = /usr/lib/libcrypto.dylib; sourceTree = "<absolute>"; };
@@ -236,6 +247,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D80C301B115F471E00EC93CE /* SenTestingKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8DDB66511678F3C00E7A62E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +291,7 @@
 		CA5A6876110825E500BF1BC8 /* Web server extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D8F64C4D116901BC00F50C03 /* json2.js */,
 				D86354AF114CFE59007B9391 /* NSException+WebDriver.h */,
 				D86354B0114CFE59007B9391 /* NSException+WebDriver.m */,
 				D86354B1114CFE59007B9391 /* NSURLRequest+IgnoreSSL.h */,
@@ -326,6 +345,7 @@
 				D86354D2114CFF1A007B9391 /* QuartzCore.framework */,
 				D80C2FFC115F455D00EC93CE /* UnitTests-Info.plist */,
 				D80C301A115F471E00EC93CE /* SenTestingKit.framework */,
+				D8DDB66911678F3C00E7A62E /* IntegrationTests-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -335,6 +355,7 @@
 				CA5A6906110833FB00BF1BC8 /* SafariExtension.bundle */,
 				D8F6C97E110D6AE8009DADFF /* BundleInjector.dylib */,
 				D80C2FFB115F455D00EC93CE /* UnitTests.octest */,
+				D8DDB66811678F3C00E7A62E /* IntegrationTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -343,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				D80C3000115F459000EC93CE /* CookieStoreTest.m */,
+				D8DDB64111678AB300E7A62E /* PerProcessSafariFilesTest.m */,
 			);
 			name = objc;
 			path = test/objc;
@@ -500,6 +522,24 @@
 			productReference = D80C2FFB115F455D00EC93CE /* UnitTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
+		D8DDB66711678F3C00E7A62E /* IntegrationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8DDB66C11678F3D00E7A62E /* Build configuration list for PBXNativeTarget "IntegrationTests" */;
+			buildPhases = (
+				D8DDB66311678F3C00E7A62E /* Resources */,
+				D8DDB66411678F3C00E7A62E /* Sources */,
+				D8DDB66511678F3C00E7A62E /* Frameworks */,
+				D8DDB66611678F3C00E7A62E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IntegrationTests;
+			productName = IntegrationTests;
+			productReference = D8DDB66811678F3C00E7A62E /* IntegrationTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		D8F6C97D110D6AE8009DADFF /* BundleInjector */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8F6C983110D6AF9009DADFF /* Build configuration list for PBXNativeTarget "BundleInjector" */;
@@ -543,6 +583,7 @@
 				CABBA6D61075EA0500BABE9A /* SafariExtension */,
 				D8F6C97D110D6AE8009DADFF /* BundleInjector */,
 				D80C2FFA115F455D00EC93CE /* UnitTests */,
+				D8DDB66711678F3C00E7A62E /* IntegrationTests */,
 			);
 		};
 /* End PBXProject section */
@@ -597,6 +638,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8F64C7D1169032D00F50C03 /* json2.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,10 +649,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D8DDB66311678F3C00E7A62E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		D80C2FF9115F455D00EC93CE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		D8DDB66611678F3C00E7A62E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -674,6 +736,19 @@
 				D80C3144115F533100EC93CE /* SafariExtensionPaths.m in Sources */,
 				D80C317C115F584700EC93CE /* PerProcessHTTPCookieStore.m in Sources */,
 				D80C3194115F59C500EC93CE /* PerProcessSafariFiles.m in Sources */,
+				D8DDB64211678AB300E7A62E /* PerProcessSafariFilesTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8DDB66411678F3C00E7A62E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8DDB66F11678F5E00E7A62E /* PerProcessSafariFilesTest.m in Sources */,
+				D8DDB67011678F6800E7A62E /* PerProcessSafariFiles.m in Sources */,
+				D8DDB67711678FA700E7A62E /* SafariExtensionPaths.m in Sources */,
+				D8DDB67811678FAE00E7A62E /* PerProcessHTTPCookieStore.m in Sources */,
+				D8F64C4F116901BC00F50C03 /* json2.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -863,6 +938,63 @@
 			};
 			name = Release;
 		};
+		D8DDB66A11678F3D00E7A62E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "IntegrationTests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = IntegrationTests;
+				TEST_HOST = /Applications/Safari.app/Contents/MacOS/Safari;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D8DDB66B11678F3D00E7A62E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "IntegrationTests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = IntegrationTests;
+				TEST_HOST = /Applications/Safari.app/Contents/MacOS/Safari;
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		D8F6C97F110D6AE9009DADFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -939,6 +1071,15 @@
 			buildConfigurations = (
 				D80C2FFD115F455E00EC93CE /* Debug */,
 				D80C2FFE115F455E00EC93CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8DDB66C11678F3D00E7A62E /* Build configuration list for PBXNativeTarget "IntegrationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8DDB66A11678F3D00E7A62E /* Debug */,
+				D8DDB66B11678F3D00E7A62E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

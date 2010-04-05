@@ -19,6 +19,7 @@
 #import "Session+ExecuteScript.h"
 #import "HTTPVirtualDirectory+AccessViewController.h"
 #import "NSObject+SBJSON.h"
+#import "NSString+SBJSON.h"
 #import "WebViewDriver.h"
 #import "NSException+WebDriver.h"
 #import "Element.h"
@@ -85,6 +86,24 @@
 
 #pragma mark Resource Handler
 
+- (NSString*)convertToJSON:(id)variable {
+  NSBundle* extensionBundle = [NSBundle bundleForClass:[self class]];
+  NSString* json2Path = [extensionBundle pathForResource:@"json2" ofType:@"js"];
+  NSError* error = 0;
+  NSString* cmdToExecute = [NSString stringWithContentsOfFile:json2Path encoding:NSUTF8StringEncoding error:&error];
+
+  if (error) {
+    @throw([NSException webDriverExceptionWithMessage:
+            [NSString stringWithFormat:@"Error reading path: %@ - %@", json2Path, error]
+                                        andStatusCode:ENOSUCHDRIVER]);
+  }
+  cmdToExecute = [cmdToExecute stringByAppendingFormat:@";\n"
+                                                    "(function () {\n"
+                                                    "  return JSON.stringify(%@,null);\n"
+                                                    "})();",variable];
+  return [[self viewController] jsEval:@"%@",cmdToExecute];
+}
+
 // Execute the script given. Returns a dictionary with type: and value:
 // properties.
 - (NSDictionary *)executeScript:(NSDictionary *)arguments {
@@ -123,6 +142,10 @@
                      "   return 'NULL';\n"
                      " } else if (result['tagName']) {\n"
                      "   return 'ELEMENT';\n"
+                     " } else if ((typeof result == 'object') &&\n"
+                     "       (typeof result.length === 'number') &&\n"
+                     "       !(result.propertyIsEnumerable('length'))) {\n"
+                     "   return 'ARRAY';\n"
                      " } else {\n"
                      "   return (typeof result).toUpperCase();\n"
                      " }\n"
@@ -148,11 +171,14 @@
       [formatter release];
     } else if ([type isEqualToString:@"BOOLEAN"]) {
       value = [NSNumber numberWithBool:[result isEqualToString:@"true"]];
+    } else if ([type isEqualToString:@"ARRAY"]) {
+      NSString* result = [[self convertToJSON:@"result"] JSONFragmentValue];
+      value = result;
     } else {
-      // Result could be a string, array, or generic object. Currently, we do
-      // not support arrays or generic objects (which could conceivably be
+      // Result could be a string, or generic object. Currently, we do
+      // not support generic objects (which could conceivably be
       // converted to a map).
-      // TODO: add support for arrays and maps
+      // TODO: add support for maps
       value = result;
     }
     return value;
