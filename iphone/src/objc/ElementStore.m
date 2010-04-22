@@ -47,8 +47,11 @@ static const NSString *JSARRAY = @"_WEBDRIVER_ELEM_CACHE";
   [self configureJSStore];
   
   [self setIndex:[WebDriverResource resourceWithTarget:self
-                                             GETAction:NULL
+                                            GETAction:NULL
                                             POSTAction:@selector(findElement:)]];
+  [self setResource:[WebDriverResource resourceWithTarget:self 
+                                            GETAction:NULL 
+                                            POSTAction:@selector(getActiveElement:)] withName:@"active"];
   
   document_ = [self elementFromJSObject:@"document"];
   
@@ -104,6 +107,12 @@ static const NSString *JSARRAY = @"_WEBDRIVER_ELEM_CACHE";
 
 - (NSString *)jsLocatorForElement:(Element *)element {
   return [self jsLocatorForElementWithId:[element elementId]];
+}
+
+- (NSDictionary*)getActiveElement:(NSDictionary*)data
+{
+  Element* result = [self elementFromJSObject:@"document.activeElement"];
+  return [result idDictionary];
 }
 
 // Construct an Element from a javascript object. This stores a reference to the
