@@ -58,7 +58,6 @@ public class SafariBinary {
       process.waitFor();
     }
     
-    @Override
     public void run() {
       int in = 0;
       while (in != -1) {
@@ -123,8 +122,7 @@ public class SafariBinary {
         setupBuilderEnvironments();
         
         safariProcess = new ProcessWrapper(processBuilder.start());
-        safariProcess.addProcessListener(new ProcessListener() {          
-          @Override
+        safariProcess.addProcessListener(new ProcessListener() {
           public void onProcessFinished() {
             safariProcess = null;            
           }          
@@ -132,6 +130,7 @@ public class SafariBinary {
         
         waitForServerToRespond(new URL(getUrl()),MAX_LOAD_WAIT,safariProcess);
       } catch (Exception e) {
+    	quit();
         throw new WebDriverException("Failed to launch Safari.", e);
       }
     } else {
@@ -152,5 +151,6 @@ public class SafariBinary {
       safariProcess.quit();
       safariProcess = null;
     }
+    safariExtension.clean();
   }
 }

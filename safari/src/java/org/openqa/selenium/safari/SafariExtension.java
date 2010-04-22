@@ -22,21 +22,31 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.internal.FileHandler;
+import org.openqa.selenium.internal.TemporaryFilesystem;
 
 public class SafariExtension {
 
   public static final String SAFARI_EXTENSION_DIRECTORY_PROPERTY = "webdriver.safari.extensiondir";
   public static final String SAFARI_EXTENSION_NAME = "SafariExtension.bundle";
-  
-  private static volatile File defaultExtensionDir;
+  private File extensionDir = null;
+  private List<File> dirsToDelete = new ArrayList<File>();
   
   public void addListenPortEnv(Map<String, String> envs, URL remoteURL) {
     String port = String.valueOf(remoteURL.getPort());
     envs.put("WEBDRIVER_SAFARI_PORT", port);
+  }
+  
+  private File findSafariExtensionDir() {
+	if (extensionDir == null) {
+	  extensionDir = loadExtension();
+	}
+	return extensionDir;
   }
   
   private String getBundlePath() {
@@ -52,27 +62,13 @@ public class SafariExtension {
   
   private static final String DEFAULT_EXTENSION_PATH = "/safari-extension.zip";
   
-  public static File findSafariExtensionDir() {
-    File directory = defaultExtensionDir;
-    if (directory == null) {
-      synchronized (SafariExtension.class) {
-        directory = defaultExtensionDir;
-        if (directory == null) {
-          directory = defaultExtensionDir = loadExtension();
-        }
-      }
-    }
-    return directory;
-  } 
-  
   static private String bundleInjectorLibrary(File extensionDir) {
-    //return "/Developer/Library/PrivateFrameworks/DevToolsBundleInjection.framework/DevToolsBundleInjection";
     File contentsDir = new File(extensionDir,"Contents");
     File sharedSupportDir = new File(contentsDir,"SharedSupport");
     File bundleInjectionDylib = new File(sharedSupportDir,"BundleInjector.dylib");
     return bundleInjectionDylib.getAbsolutePath();
   }
-	
+    	
   private static File checkExtensionContent(File baseDir) throws IOException {
     File extensionDir = new File(baseDir,SAFARI_EXTENSION_NAME);
     if (!extensionDir.isDirectory()) {
@@ -95,7 +91,7 @@ public class SafariExtension {
     return extensionDir;
   }
 
-  private static File loadExtension() {
+  private File loadExtension() {
     try {
       File extensionDir;
       String directory = System.getProperty(SAFARI_EXTENSION_DIRECTORY_PROPERTY);
@@ -103,11 +99,27 @@ public class SafariExtension {
         extensionDir = new File(directory);
       } else {
         InputStream stream = SafariExtension.class.getResourceAsStream(DEFAULT_EXTENSION_PATH);
-        extensionDir = FileHandler.unzip(stream);
+        File tempExtensionDir = FileHandler.unzip(stream);
+        dirsToDelete.add(tempExtensionDir);
+        extensionDir = TemporaryFilesystem.createTempDir("webdriver", "extension");
+        dirsToDelete.add(extensionDir);
+        if (extensionDir.exists() && !FileHandler.delete(extensionDir)) {
+          throw new IOException("Unable to delete existing extension directory: " + extensionDir);
+        }
+
+        FileHandler.createDir(extensionDir);
+        FileHandler.makeWritable(extensionDir);
+        FileHandler.copy(tempExtensionDir, extensionDir);
       }
       return checkExtensionContent(extensionDir);
     } catch (IOException e) {
       throw new WebDriverException(e);
     }
+  }
+
+  public void clean() {
+	for (File file: dirsToDelete) {
+	  TemporaryFilesystem.deleteTempDir(file);
+	}
   }
 }
