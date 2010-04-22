@@ -1,7 +1,15 @@
 1. CocoaHTTPLibrary:
 - fixed patch for new version (also removed second HTTPResponse, added category methods to HTTPConneciton.m, as HTTPConnection.m now includes HTTPResponse directly and via HTTPAsyncFileResponse, by default that includes both which errors because is duplicate definiton)
-2. 
-       
+2.         
+
+To run from debugger:
+1. project/new custom executable: Safari /Applications/Safari.app/Contents/MacOS/Safari
+2. add DYLD_INSERT_LIBRARIES=$(DEVELOPER_LIBRARY_DIR)/PrivateFrameworks/DevToolsBundleInjection.framework/DevToolsBundleInjection
+3. add XCInjectBundle=${CONFIGURATION_BUILD_DIR}/SafariDriver.bundle
+4. add XCInjectBundleInto=/Applications/Safari.app/Contents/MacOS/Safari
+5. add SAFARIDRIVER_PORT=4000 
+6. set working directory to "Project directory"
+
 
 TODO:
 - IntegrationTest is more a demo than a test
@@ -14,3 +22,24 @@ How to run iphone tests under the debugger:
 1.) start webdriver in simulator
 2.) rake test_iphone_client JVM_ARGS='-Dwebdriver.iphone.useExisting=true'   
 3.) rake test_iphone_client JVM_ARGS='-Dwebdriver.tests.class=org.openqa.selenium.JavascriptEnabledDriverTest -Dwebdriver.tests.method=testShouldBeAbleToGetTheLocationOfAnElement' 
+
+
+There were 2 failures:
+2) testSimpleOperations(org.openqa.selenium.safari.SafariDriverTest)junit.framework.ComparisonFailure: null expected:<[http://www.google.com]/> but was:<[file:///Applications/Safari.app/Contents/Resources]/>
+	at org.openqa.selenium.safari.SafariDriverTest.testSimpleOperations(SafariDriverTest.java:12)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:24)
+	at junit.extensions.TestSetup$1.protect(TestSetup.java:23)
+	at junit.extensions.TestSetup.run(TestSetup.java:27)
+	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:24)
+	at junit.extensions.TestSetup$1.protect(TestSetup.java:23)
+	at junit.extensions.TestSetup.run(TestSetup.java:27)            
+	
+
+
+rake test_safari JVM_ARGS="-Dwebdriver.tests.class=PageLoadingTest -Dwebdriver.tests.method=testShouldBeAbleToNavigateBackInTheBrowserHistoryInPresenceOfIframes -Dwebdriver.singletestsuite.leaverunning=true"
+
+
+rake test_safari JVM_ARGS="-Dwebdriver.tests.class=JavascriptEnabledDriverTest -Dwebdriver.tests.method=testIfNoElementHasFocusTheActiveElementIsTheBody -Dwebdriver.singletestsuite.leaverunning=true"
